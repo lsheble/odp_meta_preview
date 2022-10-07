@@ -124,6 +124,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   }
 }</script>
 
+<link href="../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+<script src="../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -270,31 +273,20 @@ Attaching package: 'dplyr'</code></pre>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(inspections, <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 10 × 12
-   IO_ID  Address    Occup…¹ Struc…² PropU…³ PropU…⁴ Inspe…⁵ LatestInspDate     
-   &lt;chr&gt;  &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;dttm&gt;             
- 1 161973 119 Garfi… Sugar … &lt;NA&gt;    400     Reside… ANNUAL… 2022-09-14 17:46:00
- 2 161957 1555 Mack  Pepsi-… &lt;NA&gt;    700     Manufa… ANNUAL… 2022-09-14 17:11:00
- 3 161961 13775 Bue… 13775 … &lt;NA&gt;    500     Mercan… ANNUAL… 2022-09-14 13:20:00
- 4 161974 18695 She… ALRO S… Alro S… 700     Manufa… ANNUAL… 2022-09-14 03:50:00
- 5 161924 18700 Mey… Home D… Home D… 500     Mercan… ANNUAL… 2022-09-13 17:37:00
- 6 161935 2131 Beau… GLEANE… &lt;NA&gt;    599     Busine… ANNUAL… 2022-09-13 16:00:00
- 7 161936 3579 Grat… Faygo … Faygo … 700     Manufa… ANNUAL… 2022-09-13 13:45:00
- 8 161925 7515 Lynd… Detroi… Detroi… 700     Manufa… ANNUAL… 2022-09-13 12:31:00
- 9 161929 8530 Joy   Carla … Carla … 200     Educat… ANNUAL… 2022-09-13 10:00:00
-10 161914 600 East … BCBSM … Tower … 882     Parkin… ANNUAL… 2022-09-12 15:15:00
-# … with 4 more variables: InspWithinLastYear &lt;chr&gt;, address_id &lt;chr&gt;,
-#   lon &lt;dbl&gt;, lat &lt;dbl&gt;, and abbreviated variable names ¹​OccupantName,
-#   ²​StructureName, ³​PropUseType, ⁴​PropUseTypeDescription, ⁵​InspectionType_Full
-# ℹ Use `colnames()` to see all variable names</code></pre>
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["IO_ID"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Address"],"name":[2],"type":["chr"],"align":["left"]},{"label":["OccupantName"],"name":[3],"type":["chr"],"align":["left"]},{"label":["StructureName"],"name":[4],"type":["chr"],"align":["left"]},{"label":["PropUseType"],"name":[5],"type":["chr"],"align":["left"]},{"label":["PropUseTypeDescription"],"name":[6],"type":["chr"],"align":["left"]},{"label":["InspectionType_Full"],"name":[7],"type":["chr"],"align":["left"]},{"label":["LatestInspDate"],"name":[8],"type":["dttm"],"align":["right"]},{"label":["InspWithinLastYear"],"name":[9],"type":["chr"],"align":["left"]},{"label":["address_id"],"name":[10],"type":["chr"],"align":["left"]},{"label":["lon"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["lat"],"name":[12],"type":["dbl"],"align":["right"]}],"data":[{"1":"161973","2":"119 Garfield","3":"Sugar Hill","4":"NA","5":"400","6":"Residential - Other","7":"ANNUAL High Rise","8":"2022-09-14 17:46:00","9":"Yes","10":"485882","11":"-83.06041","12":"42.35479"},{"1":"161957","2":"1555 Mack","3":"Pepsi-Detroit","4":"NA","5":"700","6":"Manufacturing, Processing","7":"ANNUAL 302 Site","8":"2022-09-14 17:11:00","9":"Yes","10":"348446","11":"-83.04397","12":"42.35527"},{"1":"161961","2":"13775 Buena Vista","3":"13775 BUENA VISTA LLC","4":"NA","5":"500","6":"Mercantile, Business - Other","7":"ANNUAL Industrial Occupancy","8":"2022-09-14 13:20:00","9":"Yes","10":"537514","11":"-83.18188","12":"42.38318"},{"1":"161974","2":"18695 Sherwood","3":"ALRO STEEL CORP","4":"Alro Steel","5":"700","6":"Manufacturing, Processing","7":"ANNUAL 302 Site","8":"2022-09-14 03:50:00","9":"Yes","10":"538643","11":"-83.03484","12":"42.43178"},{"1":"161924","2":"18700 Meyers","3":"Home Depot","4":"Home Depot","5":"500","6":"Mercantile, Business - Other","7":"ANNUAL 302 Site","8":"2022-09-13 17:37:00","9":"Yes","10":"16058","11":"-83.16943","12":"42.42854"},{"1":"161935","2":"2131 Beaufait","3":"GLEANERS COMMUNITY FOOD BANK","4":"NA","5":"599","6":"Business Office","7":"ANNUAL 302 Site","8":"2022-09-13 16:00:00","9":"Yes","10":"278656","11":"-83.01395","12":"42.35390"},{"1":"161936","2":"3579 Gratiot","3":"Faygo Beverages","4":"Faygo Beverages","5":"700","6":"Manufacturing, Processing","7":"ANNUAL 302 Site","8":"2022-09-13 13:45:00","9":"Yes","10":"270094","11":"-83.02655","12":"42.36283"},{"1":"161925","2":"7515 Lyndon","3":"Detroit Chrome Inc. Aerotech","4":"Detroit Chrome Inc., Aerotech","5":"700","6":"Manufacturing, Processing","7":"ANNUAL 302 Site","8":"2022-09-13 12:31:00","9":"Yes","10":"68822","11":"-83.14611","12":"42.39499"},{"1":"161929","2":"8530 Joy","3":"Carla Barton","4":"Carla Barton","5":"200","6":"Educational - Other","7":"ANNUAL Educational","8":"2022-09-13 10:00:00","9":"Yes","10":"216212","11":"-83.15385","12":"42.35983"},{"1":"161914","2":"600 East Lafayette","3":"BCBSM Parking Structure","4":"Tower and Support","5":"882","6":"Parking Garage, General Vehicle","7":"ANNUAL 302 Site","8":"2022-09-12 15:15:00","9":"Yes","10":"348053","11":"-83.03874","12":"42.33429"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 </div>
 </div>
 <p>Null Value prevalence</p>
 <div class="cell" data-label="null-overview">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">inspect_na</span>(inspections) <span class="sc">%&gt;%</span> <span class="fu">show_plot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">inspect_na</span>(inspections) <span class="sc">%&gt;%</span> <span class="fu">show_plot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <p><img src="inspect_df_trial_fire_inspections_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
@@ -308,18 +300,18 @@ Attaching package: 'dplyr'</code></pre>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># inspection, prop use types to factors</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>inspections<span class="sc">$</span>InspectionType_Full <span class="ot">&lt;-</span> <span class="fu">as_factor</span>(inspections<span class="sc">$</span>InspectionType_Full)</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>inspections<span class="sc">$</span>PropUseType <span class="ot">&lt;-</span> <span class="fu">as_factor</span>(inspections<span class="sc">$</span>PropUseType)</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>inspections<span class="sc">$</span>PropUseTypeDescription <span class="ot">&lt;-</span> <span class="fu">as_factor</span>(inspections<span class="sc">$</span>PropUseTypeDescription)</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>inspections<span class="sc">$</span>InspWithinLastYear <span class="ot">&lt;-</span> <span class="fu">as_factor</span>(inspections<span class="sc">$</span>InspWithinLastYear)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># inspection, prop use types to factors</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>inspections<span class="sc">$</span>InspectionType_Full <span class="ot">&lt;-</span> <span class="fu">as_factor</span>(inspections<span class="sc">$</span>InspectionType_Full)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>inspections<span class="sc">$</span>PropUseType <span class="ot">&lt;-</span> <span class="fu">as_factor</span>(inspections<span class="sc">$</span>PropUseType)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>inspections<span class="sc">$</span>PropUseTypeDescription <span class="ot">&lt;-</span> <span class="fu">as_factor</span>(inspections<span class="sc">$</span>PropUseTypeDescription)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>inspections<span class="sc">$</span>InspWithinLastYear <span class="ot">&lt;-</span> <span class="fu">as_factor</span>(inspections<span class="sc">$</span>InspWithinLastYear)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>Data types</p>
 <div class="cell" data-label="types">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">inspect_types</span>(inspections) <span class="sc">%&gt;%</span> <span class="fu">show_plot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">inspect_types</span>(inspections) <span class="sc">%&gt;%</span> <span class="fu">show_plot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <p><img src="inspect_df_trial_fire_inspections_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
@@ -328,34 +320,25 @@ Attaching package: 'dplyr'</code></pre>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove 'ANNUAL ' from InspectionType_Full text strings for chart and plot</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>tmp_inspections <span class="ot">&lt;-</span> inspections</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>tmp_inspections<span class="sc">$</span>InspectionType_Full <span class="ot">&lt;-</span> <span class="fu">str_sub</span>(tmp_inspections<span class="sc">$</span>InspectionType_Full, <span class="dv">8</span>, <span class="sc">-</span><span class="dv">1</span>)</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>tmp_inspections <span class="sc">%&gt;%</span> <span class="fu">count</span>(InspectionType_Full, <span class="at">sort=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove 'ANNUAL ' from InspectionType_Full text strings for chart and plot</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>tmp_inspections <span class="ot">&lt;-</span> inspections</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>tmp_inspections<span class="sc">$</span>InspectionType_Full <span class="ot">&lt;-</span> <span class="fu">str_sub</span>(tmp_inspections<span class="sc">$</span>InspectionType_Full, <span class="dv">8</span>, <span class="sc">-</span><span class="dv">1</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>tmp_inspections <span class="sc">%&gt;%</span> <span class="fu">count</span>(InspectionType_Full, <span class="at">sort=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 23 × 2
-   InspectionType_Full      n
-   &lt;chr&gt;                &lt;int&gt;
- 1 Business Occupancy    1727
- 2 Mercantile Occupancy  1334
- 3 Assembly Occupancy     783
- 4 Repair Garage          520
- 5 Gas Station            321
- 6 Industrial Occupancy   242
- 7 Educational            127
- 8 Residential            119
- 9 High Rise              108
-10 302 Site                72
-# … with 13 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["InspectionType_Full"],"name":[1],"type":["chr"],"align":["left"]},{"label":["n"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"Business Occupancy","2":"1727"},{"1":"Mercantile Occupancy","2":"1334"},{"1":"Assembly Occupancy","2":"783"},{"1":"Repair Garage","2":"520"},{"1":"Gas Station","2":"321"},{"1":"Industrial Occupancy","2":"242"},{"1":"Educational","2":"127"},{"1":"Residential","2":"119"},{"1":"High Rise","2":"108"},{"1":"302 Site","2":"72"},{"1":"Storage Occupancy","2":"70"},{"1":"Child Care Center (Day Care)","2":"39"},{"1":"Institutional Occupancy","2":"36"},{"1":"Cutting and Welding","2":"29"},{"1":"Storage of Flammable and Combustible Liquids","2":"29"},{"1":"Business License","2":"20"},{"1":"Adult Day Care","2":"6"},{"1":"Parking Garage/Deck","2":"6"},{"1":"Manufacturing Liquids","2":"3"},{"1":"Shelter","2":"3"},{"1":"Detention & Correctional Facility","2":"2"},{"1":"Wholesale Package Dealer","2":"2"},{"1":"Educational-Prek thru 8","2":"1"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 </div>
 </div>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(tmp_inspections, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">fct_infreq</span>(InspectionType_Full))) <span class="sc">+</span> </span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Annual Inspection Type"</span>, <span class="at">y=</span><span class="st">"Count"</span>) <span class="sc">+</span> <span class="fu">coord_flip</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(tmp_inspections, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">fct_infreq</span>(InspectionType_Full))) <span class="sc">+</span> </span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Annual Inspection Type"</span>, <span class="at">y=</span><span class="st">"Count"</span>) <span class="sc">+</span> <span class="fu">coord_flip</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <p><img src="inspect_df_trial_fire_inspections_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
@@ -364,31 +347,22 @@ Attaching package: 'dplyr'</code></pre>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>inspections <span class="sc">%&gt;%</span> <span class="fu">count</span>(PropUseType, <span class="at">sort=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>inspections <span class="sc">%&gt;%</span> <span class="fu">count</span>(PropUseType, <span class="at">sort=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 67 × 2
-   PropUseType     n
-   &lt;fct&gt;       &lt;int&gt;
- 1 500          2148
- 2 100           592
- 3 579           565
- 4 UUU           524
- 5 571           364
- 6 599           205
- 7 600           191
- 8 700            89
- 9 162            87
-10 161            75
-# … with 57 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["PropUseType"],"name":[1],"type":["fct"],"align":["left"]},{"label":["n"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"500","2":"2148"},{"1":"100","2":"592"},{"1":"579","2":"565"},{"1":"UUU","2":"524"},{"1":"571","2":"364"},{"1":"599","2":"205"},{"1":"600","2":"191"},{"1":"700","2":"89"},{"1":"162","2":"87"},{"1":"161","2":"75"},{"1":"213","2":"72"},{"1":"400","2":"69"},{"1":"0","2":"65"},{"1":"341","2":"56"},{"1":"800","2":"52"},{"1":"300","2":"41"},{"1":"254","2":"40"},{"1":"449","2":"40"},{"1":"215","2":"39"},{"1":"160","2":"35"},{"1":"557","2":"26"},{"1":"564","2":"25"},{"1":"200","2":"18"},{"1":"130","2":"15"},{"1":"519","2":"14"},{"1":"511","2":"12"},{"1":"882","2":"11"},{"1":"549","2":"10"},{"1":"900","2":"10"},{"1":"131","2":"9"},{"1":"142","2":"8"},{"1":"241","2":"7"},{"1":"460","2":"5"},{"1":"459","2":"5"},{"1":"NNN","2":"5"},{"1":"340","2":"4"},{"1":"592","2":"4"},{"1":"140","2":"4"},{"1":"655","2":"4"},{"1":"141","2":"4"},{"1":"120","2":"4"},{"1":"880","2":"4"},{"1":"580","2":"4"},{"1":"361","2":"4"},{"1":"439","2":"3"},{"1":"115","2":"3"},{"1":"331","2":"3"},{"1":"121","2":"3"},{"1":"936","2":"2"},{"1":"569","2":"2"},{"1":"891","2":"2"},{"1":"640","2":"1"},{"1":"593","2":"1"},{"1":"926","2":"1"},{"1":"921","2":"1"},{"1":"134","2":"1"},{"1":"529","2":"1"},{"1":"559","2":"1"},{"1":"839","2":"1"},{"1":"111","2":"1"},{"1":"342","2":"1"},{"1":"581","2":"1"},{"1":"170","2":"1"},{"1":"152","2":"1"},{"1":"183","2":"1"},{"1":"645","2":"1"},{"1":"143","2":"1"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 </div>
 </div>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(inspections, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">fct_infreq</span>(PropUseTypeDescription))) <span class="sc">+</span> </span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span> <span class="fu">coord_flip</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(inspections, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">fct_infreq</span>(PropUseTypeDescription))) <span class="sc">+</span> </span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span> <span class="fu">coord_flip</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <p><img src="inspect_df_trial_fire_inspections_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
@@ -397,42 +371,34 @@ Attaching package: 'dplyr'</code></pre>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>inspections <span class="sc">%&gt;%</span> <span class="fu">count</span>(PropUseTypeDescription, <span class="at">sort=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>inspections <span class="sc">%&gt;%</span> <span class="fu">count</span>(PropUseTypeDescription, <span class="at">sort=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 67 × 2
-   PropUseTypeDescription                                  n
-   &lt;fct&gt;                                               &lt;int&gt;
- 1 Mercantile, Business - Other                         2148
- 2 Assembly - Other                                      592
- 3 Motor Vehicle or Boat Sales, Services, Repair         565
- 4 Undetermined                                          524
- 5 Service Station, Gas Station                          364
- 6 Business Office                                       205
- 7 Ind., Utility, Defense, Agriculture, Mining - Other   191
- 8 Manufacturing, Processing                              89
- 9 Bar or Nightclub                                       87
-10 Restaurant or Cafeteria                                75
-# … with 57 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["PropUseTypeDescription"],"name":[1],"type":["fct"],"align":["left"]},{"label":["n"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"Mercantile, Business - Other","2":"2148"},{"1":"Assembly - Other","2":"592"},{"1":"Motor Vehicle or Boat Sales, Services, Repair","2":"565"},{"1":"Undetermined","2":"524"},{"1":"Service Station, Gas Station","2":"364"},{"1":"Business Office","2":"205"},{"1":"Ind., Utility, Defense, Agriculture, Mining - Other","2":"191"},{"1":"Manufacturing, Processing","2":"89"},{"1":"Bar or Nightclub","2":"87"},{"1":"Restaurant or Cafeteria","2":"75"},{"1":"Elementary School, Including Kindergarten","2":"72"},{"1":"Residential - Other","2":"69"},{"1":"Property Use - Other","2":"65"},{"1":"Clinic, Clinic-type Infirmary","2":"56"},{"1":"Storage - Other","2":"52"},{"1":"Health Care, Detention & Correction - Other","2":"41"},{"1":"Day Care, In Commercial Property","2":"40"},{"1":"Hotel/motel, Commercial","2":"40"},{"1":"High School/Junior High School/Middle School","2":"39"},{"1":"Eating, Drinking Places - Other","2":"35"},{"1":"Personal Service, Including Barber & Beauty Shops","2":"26"},{"1":"Laundry, Dry Cleaning","2":"25"},{"1":"Educational - Other","2":"18"},{"1":"Places Of Worship, Funeral Parlors - Other","2":"15"},{"1":"Food And Beverage Sales, Grocery Store","2":"14"},{"1":"Convenience Store","2":"12"},{"1":"Parking Garage, General Vehicle","2":"11"},{"1":"Specialty Shop","2":"10"},{"1":"Outside or Special Property - Other","2":"10"},{"1":"Church, Mosque, Synagogue, Temple, Chapel","2":"9"},{"1":"Clubhouse","2":"8"},{"1":"Adult Education Center, College Classroom","2":"7"},{"1":"Dormitory-type Residence - Other","2":"5"},{"1":"Residential Board And Care","2":"5"},{"1":"None","2":"5"},{"1":"Clinics, Doctors Offices, Hemodialysis Cntr - Other","2":"4"},{"1":"Bank","2":"4"},{"1":"Clubs - Other","2":"4"},{"1":"Crops or Orchard","2":"4"},{"1":"Athletic/Health Club","2":"4"},{"1":"Variable-use Amusement, Recreation Places - Other","2":"4"},{"1":"Vehicle Storage - Other","2":"4"},{"1":"General Retail - Other","2":"4"},{"1":"Jail, Prison (not Juvenile)","2":"4"},{"1":"Boarding/rooming House, Residential Hotels","2":"3"},{"1":"Roller Rink: Indoor or Outdoor","2":"3"},{"1":"Hospital - Medical or Psychiatric","2":"3"},{"1":"Ballroom, Gymnasium","2":"3"},{"1":"Vacant Lot","2":"2"},{"1":"Professional Supplies, Services","2":"2"},{"1":"Warehouse","2":"2"},{"1":"Utility or Distribution System - Other","2":"1"},{"1":"Office: Veterinary or Research","2":"1"},{"1":"Outbuilding, Protective Shelter","2":"1"},{"1":"Bridge, Trestle","2":"1"},{"1":"Funeral Parlor","2":"1"},{"1":"Textile, Wearing Apparel Sales","2":"1"},{"1":"Recreational, Hobby, Home Repair Sales, Pet Store","2":"1"},{"1":"Refrigerated Storage","2":"1"},{"1":"Bowling Establishment","2":"1"},{"1":"Doctor, Dentist or Oral Surgeon Office","2":"1"},{"1":"Department or Discount Store","2":"1"},{"1":"Passenger Terminal - Other","2":"1"},{"1":"Museum","2":"1"},{"1":"Movie Theater","2":"1"},{"1":"Flammable Liquid Distribution, F.l. Pipeline","2":"1"},{"1":"Yacht Club","2":"1"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 </div>
 </div>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>inspections <span class="sc">%&gt;%</span> <span class="fu">count</span>(InspWithinLastYear, <span class="at">sort=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>inspections <span class="sc">%&gt;%</span> <span class="fu">count</span>(InspWithinLastYear, <span class="at">sort=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 2
-  InspWithinLastYear     n
-  &lt;fct&gt;              &lt;int&gt;
-1 Yes                 3796
-2 No                  1803</code></pre>
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["InspWithinLastYear"],"name":[1],"type":["fct"],"align":["left"]},{"label":["n"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"Yes","2":"3796"},{"1":"No","2":"1803"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 </div>
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(inspections, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">fct_infreq</span>(InspWithinLastYear))) <span class="sc">+</span> </span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(inspections, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">fct_infreq</span>(InspWithinLastYear))) <span class="sc">+</span> </span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <p><img src="inspect_df_trial_fire_inspections_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
@@ -441,15 +407,15 @@ Attaching package: 'dplyr'</code></pre>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Need to bin by month or year - this is unbinned</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co"># inspections %&gt;% select(LatestInspDate)</span></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ggplot(inspections, aes(x=LatestInspDate)) + stat_count(geom='point')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Need to bin by month or year - this is unbinned</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># inspections %&gt;% select(LatestInspDate)</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ggplot(inspections, aes(x=LatestInspDate)) + stat_count(geom='point')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">inspect_imb</span>(inspections) <span class="sc">%&gt;%</span> <span class="fu">show_plot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">inspect_imb</span>(inspections) <span class="sc">%&gt;%</span> <span class="fu">show_plot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <p><img src="inspect_df_trial_fire_inspections_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="672"></p>
@@ -458,67 +424,43 @@ Attaching package: 'dplyr'</code></pre>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">inspect_cat</span>(inspections)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">inspect_cat</span>(inspections)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 9 × 5
-  col_name                 cnt common                       common_pcnt levels  
-  &lt;chr&gt;                  &lt;int&gt; &lt;chr&gt;                              &lt;dbl&gt; &lt;named &gt;
-1 Address                 5593 1249 Washington Boulevard         0.0357 &lt;tibble&gt;
-2 address_id              5213 &lt;NA&gt;                              6.57   &lt;tibble&gt;
-3 InspectionType_Full       23 ANNUAL Business Occupancy        30.8    &lt;tibble&gt;
-4 InspWithinLastYear         2 Yes                              67.8    &lt;tibble&gt;
-5 IO_ID                   5599 100051                            0.0179 &lt;tibble&gt;
-6 OccupantName            5266 Metro PCS                         0.697  &lt;tibble&gt;
-7 PropUseType               67 500                              38.4    &lt;tibble&gt;
-8 PropUseTypeDescription    67 Mercantile, Business - Other     38.4    &lt;tibble&gt;
-9 StructureName           3153 &lt;NA&gt;                             34.7    &lt;tibble&gt;</code></pre>
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["col_name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["cnt"],"name":[2],"type":["int"],"align":["right"]},{"label":["common"],"name":[3],"type":["chr"],"align":["left"]},{"label":["common_pcnt"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["levels"],"name":[5],"type":["named list"],"align":["right"]}],"data":[{"1":"Address","2":"5593","3":"1249 Washington Boulevard","4":"0.03572066","5":"<tibble[,3]>"},{"1":"address_id","2":"5213","3":"NA","4":"6.57260225","5":"<tibble[,3]>"},{"1":"InspectionType_Full","2":"23","3":"ANNUAL Business Occupancy","4":"30.84479371","5":"<tibble[,3]>"},{"1":"InspWithinLastYear","2":"2","3":"Yes","4":"67.79782104","5":"<tibble[,3]>"},{"1":"IO_ID","2":"5599","3":"100051","4":"0.01786033","5":"<tibble[,3]>"},{"1":"OccupantName","2":"5266","3":"Metro PCS","4":"0.69655296","5":"<tibble[,3]>"},{"1":"PropUseType","2":"67","3":"500","4":"38.36399357","5":"<tibble[,3]>"},{"1":"PropUseTypeDescription","2":"67","3":"Mercantile, Business - Other","4":"38.36399357","5":"<tibble[,3]>"},{"1":"StructureName","2":"3153","3":"NA","4":"34.68476514","5":"<tibble[,3]>"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 </div>
 </div>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>inspections <span class="sc">%&gt;%</span> <span class="fu">distinct</span>(PropUseType, PropUseTypeDescription)  <span class="co">#%&gt;% select(PropUseType, PropUseTypeDescription)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>inspections <span class="sc">%&gt;%</span> <span class="fu">distinct</span>(PropUseType, PropUseTypeDescription)  <span class="co">#%&gt;% select(PropUseType, PropUseTypeDescription)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 67 × 2
-   PropUseType PropUseTypeDescription                             
-   &lt;fct&gt;       &lt;fct&gt;                                              
- 1 400         Residential - Other                                
- 2 700         Manufacturing, Processing                          
- 3 500         Mercantile, Business - Other                       
- 4 599         Business Office                                    
- 5 200         Educational - Other                                
- 6 882         Parking Garage, General Vehicle                    
- 7 571         Service Station, Gas Station                       
- 8 600         Ind., Utility, Defense, Agriculture, Mining - Other
- 9 100         Assembly - Other                                   
-10 254         Day Care, In Commercial Property                   
-# … with 57 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["PropUseType"],"name":[1],"type":["fct"],"align":["left"]},{"label":["PropUseTypeDescription"],"name":[2],"type":["fct"],"align":["left"]}],"data":[{"1":"400","2":"Residential - Other"},{"1":"700","2":"Manufacturing, Processing"},{"1":"500","2":"Mercantile, Business - Other"},{"1":"599","2":"Business Office"},{"1":"200","2":"Educational - Other"},{"1":"882","2":"Parking Garage, General Vehicle"},{"1":"571","2":"Service Station, Gas Station"},{"1":"600","2":"Ind., Utility, Defense, Agriculture, Mining - Other"},{"1":"100","2":"Assembly - Other"},{"1":"254","2":"Day Care, In Commercial Property"},{"1":"0","2":"Property Use - Other"},{"1":"241","2":"Adult Education Center, College Classroom"},{"1":"UUU","2":"Undetermined"},{"1":"579","2":"Motor Vehicle or Boat Sales, Services, Repair"},{"1":"640","2":"Utility or Distribution System - Other"},{"1":"549","2":"Specialty Shop"},{"1":"564","2":"Laundry, Dry Cleaning"},{"1":"161","2":"Restaurant or Cafeteria"},{"1":"557","2":"Personal Service, Including Barber & Beauty Shops"},{"1":"160","2":"Eating, Drinking Places - Other"},{"1":"341","2":"Clinic, Clinic-type Infirmary"},{"1":"340","2":"Clinics, Doctors Offices, Hemodialysis Cntr - Other"},{"1":"800","2":"Storage - Other"},{"1":"162","2":"Bar or Nightclub"},{"1":"449","2":"Hotel/motel, Commercial"},{"1":"511","2":"Convenience Store"},{"1":"131","2":"Church, Mosque, Synagogue, Temple, Chapel"},{"1":"900","2":"Outside or Special Property - Other"},{"1":"936","2":"Vacant Lot"},{"1":"460","2":"Dormitory-type Residence - Other"},{"1":"593","2":"Office: Veterinary or Research"},{"1":"592","2":"Bank"},{"1":"519","2":"Food And Beverage Sales, Grocery Store"},{"1":"459","2":"Residential Board And Care"},{"1":"439","2":"Boarding/rooming House, Residential Hotels"},{"1":"300","2":"Health Care, Detention & Correction - Other"},{"1":"NNN","2":"None"},{"1":"140","2":"Clubs - Other"},{"1":"926","2":"Outbuilding, Protective Shelter"},{"1":"921","2":"Bridge, Trestle"},{"1":"655","2":"Crops or Orchard"},{"1":"134","2":"Funeral Parlor"},{"1":"215","2":"High School/Junior High School/Middle School"},{"1":"213","2":"Elementary School, Including Kindergarten"},{"1":"141","2":"Athletic/Health Club"},{"1":"529","2":"Textile, Wearing Apparel Sales"},{"1":"569","2":"Professional Supplies, Services"},{"1":"130","2":"Places Of Worship, Funeral Parlors - Other"},{"1":"559","2":"Recreational, Hobby, Home Repair Sales, Pet Store"},{"1":"115","2":"Roller Rink: Indoor or Outdoor"},{"1":"120","2":"Variable-use Amusement, Recreation Places - Other"},{"1":"880","2":"Vehicle Storage - Other"},{"1":"331","2":"Hospital - Medical or Psychiatric"},{"1":"142","2":"Clubhouse"},{"1":"839","2":"Refrigerated Storage"},{"1":"111","2":"Bowling Establishment"},{"1":"121","2":"Ballroom, Gymnasium"},{"1":"342","2":"Doctor, Dentist or Oral Surgeon Office"},{"1":"580","2":"General Retail - Other"},{"1":"581","2":"Department or Discount Store"},{"1":"361","2":"Jail, Prison (not Juvenile)"},{"1":"170","2":"Passenger Terminal - Other"},{"1":"152","2":"Museum"},{"1":"183","2":"Movie Theater"},{"1":"645","2":"Flammable Liquid Distribution, F.l. Pipeline"},{"1":"143","2":"Yacht Club"},{"1":"891","2":"Warehouse"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 </div>
 </div>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>inspections <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(PropUseType) <span class="sc">%&gt;%</span> <span class="fu">distinct</span>(PropUseTypeDescription) <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="at">.by_group =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>inspections <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(PropUseType) <span class="sc">%&gt;%</span> <span class="fu">distinct</span>(PropUseTypeDescription) <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="at">.by_group =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 67 × 1
-   PropUseTypeDescription                             
-   &lt;fct&gt;                                              
- 1 Residential - Other                                
- 2 Manufacturing, Processing                          
- 3 Mercantile, Business - Other                       
- 4 Business Office                                    
- 5 Educational - Other                                
- 6 Parking Garage, General Vehicle                    
- 7 Service Station, Gas Station                       
- 8 Ind., Utility, Defense, Agriculture, Mining - Other
- 9 Assembly - Other                                   
-10 Day Care, In Commercial Property                   
-# … with 57 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["PropUseTypeDescription"],"name":[1],"type":["fct"],"align":["left"]}],"data":[{"1":"Residential - Other"},{"1":"Manufacturing, Processing"},{"1":"Mercantile, Business - Other"},{"1":"Business Office"},{"1":"Educational - Other"},{"1":"Parking Garage, General Vehicle"},{"1":"Service Station, Gas Station"},{"1":"Ind., Utility, Defense, Agriculture, Mining - Other"},{"1":"Assembly - Other"},{"1":"Day Care, In Commercial Property"},{"1":"Property Use - Other"},{"1":"Adult Education Center, College Classroom"},{"1":"Undetermined"},{"1":"Motor Vehicle or Boat Sales, Services, Repair"},{"1":"Utility or Distribution System - Other"},{"1":"Specialty Shop"},{"1":"Laundry, Dry Cleaning"},{"1":"Restaurant or Cafeteria"},{"1":"Personal Service, Including Barber & Beauty Shops"},{"1":"Eating, Drinking Places - Other"},{"1":"Clinic, Clinic-type Infirmary"},{"1":"Clinics, Doctors Offices, Hemodialysis Cntr - Other"},{"1":"Storage - Other"},{"1":"Bar or Nightclub"},{"1":"Hotel/motel, Commercial"},{"1":"Convenience Store"},{"1":"Church, Mosque, Synagogue, Temple, Chapel"},{"1":"Outside or Special Property - Other"},{"1":"Vacant Lot"},{"1":"Dormitory-type Residence - Other"},{"1":"Office: Veterinary or Research"},{"1":"Bank"},{"1":"Food And Beverage Sales, Grocery Store"},{"1":"Residential Board And Care"},{"1":"Boarding/rooming House, Residential Hotels"},{"1":"Health Care, Detention & Correction - Other"},{"1":"None"},{"1":"Clubs - Other"},{"1":"Outbuilding, Protective Shelter"},{"1":"Bridge, Trestle"},{"1":"Crops or Orchard"},{"1":"Funeral Parlor"},{"1":"High School/Junior High School/Middle School"},{"1":"Elementary School, Including Kindergarten"},{"1":"Athletic/Health Club"},{"1":"Textile, Wearing Apparel Sales"},{"1":"Professional Supplies, Services"},{"1":"Places Of Worship, Funeral Parlors - Other"},{"1":"Recreational, Hobby, Home Repair Sales, Pet Store"},{"1":"Roller Rink: Indoor or Outdoor"},{"1":"Variable-use Amusement, Recreation Places - Other"},{"1":"Vehicle Storage - Other"},{"1":"Hospital - Medical or Psychiatric"},{"1":"Clubhouse"},{"1":"Refrigerated Storage"},{"1":"Bowling Establishment"},{"1":"Ballroom, Gymnasium"},{"1":"Doctor, Dentist or Oral Surgeon Office"},{"1":"General Retail - Other"},{"1":"Department or Discount Store"},{"1":"Jail, Prison (not Juvenile)"},{"1":"Passenger Terminal - Other"},{"1":"Museum"},{"1":"Movie Theater"},{"1":"Flammable Liquid Distribution, F.l. Pipeline"},{"1":"Yacht Club"},{"1":"Warehouse"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 </div>
 </div>
 

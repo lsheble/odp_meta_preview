@@ -3,6 +3,7 @@ title: "Fire Inspections Overview"
 format:
   html:
     code-fold: true
+    df-print: paged
 ---
 
 
