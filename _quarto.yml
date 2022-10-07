@@ -8,6 +8,7 @@ website:
     left:
       - href: index.qmd
         text: Home
+      - inspect_df_trial_fire_inspections.Rmd
       - about.qmd
 
 format:
