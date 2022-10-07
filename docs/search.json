@@ -61,5 +61,40 @@
     "title": "About",
     "section": "",
     "text": "About this site"
+  },
+  {
+    "objectID": "exemplar/index.html#reviewing-data",
+    "href": "exemplar/index.html#reviewing-data",
+    "title": "Metadata exemplar",
+    "section": "Reviewing data",
+    "text": "Reviewing data"
+  },
+  {
+    "objectID": "exemplar/index.html#html-preview",
+    "href": "exemplar/index.html#html-preview",
+    "title": "Metadata exemplar",
+    "section": "HTML Preview",
+    "text": "HTML Preview\nhtml link"
+  },
+  {
+    "objectID": "exemplar/index.html#metadata-on-ago",
+    "href": "exemplar/index.html#metadata-on-ago",
+    "title": "Metadata exemplar",
+    "section": "Metadata on AGO",
+    "text": "Metadata on AGO\nThrough the ArcGIS Online Open Data Portal:\n\nSome metadata will be displayed on a data set’s ‘about’ page\nFull metadata will be displayed from the ‘View All Metadata’ selection"
+  },
+  {
+    "objectID": "exemplar/index.html#dcat-us-v-1.1-schema-from-ago",
+    "href": "exemplar/index.html#dcat-us-v-1.1-schema-from-ago",
+    "title": "Metadata exemplar",
+    "section": "DCAT-US v 1.1 schema from AGO",
+    "text": "DCAT-US v 1.1 schema from AGO"
+  },
+  {
+    "objectID": "exemplar/index.html#data-dictionary-formats",
+    "href": "exemplar/index.html#data-dictionary-formats",
+    "title": "Metadata exemplar",
+    "section": "Data dictionary formats",
+    "text": "Data dictionary formats"
   }
 ]

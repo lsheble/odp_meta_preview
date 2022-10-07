@@ -20,7 +20,7 @@ website:
           - exemplar/inspect_df_trial_fire_inspections.Rmd
           - exemplar/fire_inspections.html
       - href: data_dot_gov.qmd
-        text: federate catalog
+        text: Federate catalog
       - about.qmd
 
 

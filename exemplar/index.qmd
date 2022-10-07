@@ -1,24 +1,31 @@
 ---
 title: "Metadata exemplar"
+resources: fire_inspections.html
 ---
 
-## Metadata exemplar files 
 
-### Creating metadata
-
-
-### Reviewing data
+## Creating metadata
 
 
-### HTML Preview
+## Reviewing data
 
 
-### AGO Metadata page
+## HTML Preview
+
+[html link](fire_inspections.html)
 
 
-### DCAT-US v 1.1 schema from AGO
+## Metadata on AGO
+
+Through the ArcGIS Online Open Data Portal:
+
+- Some metadata will be displayed on a data set's ['about' page](https://data.detroitmi.gov/datasets/detroitmi::fire-inspections/about)
+- Full metadata will be displayed from the ['View All Metadata' selection](https://www.arcgis.com/sharing/rest/content/items/0bac58a27da04e4a95910cb6488b7fe9/info/metadata/metadata.xml?format=default&output=html) 
 
 
-### Data dictionary formats 
+## DCAT-US v 1.1 schema from AGO
+
+
+## Data dictionary formats 
 
 
