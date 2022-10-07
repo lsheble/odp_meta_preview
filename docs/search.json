@@ -1,23 +1,65 @@
 [
   {
-    "objectID": "inspect_df_trial_fire_inspections.html",
-    "href": "inspect_df_trial_fire_inspections.html",
+    "objectID": "exemplar/inspect_df_trial_fire_inspections.html",
+    "href": "exemplar/inspect_df_trial_fire_inspections.html",
     "title": "Fire Inspections Overview",
     "section": "",
     "text": "Attaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union"
   },
   {
-    "objectID": "inspect_df_trial_fire_inspections.html#overview",
-    "href": "inspect_df_trial_fire_inspections.html#overview",
+    "objectID": "exemplar/inspect_df_trial_fire_inspections.html#overview",
+    "href": "exemplar/inspect_df_trial_fire_inspections.html#overview",
     "title": "Fire Inspections Overview",
     "section": "Overview",
     "text": "Overview\n\nhead(inspections, 10)\n\n# A tibble: 10 × 12\n   IO_ID  Address    Occup…¹ Struc…² PropU…³ PropU…⁴ Inspe…⁵ LatestInspDate     \n   <chr>  <chr>      <chr>   <chr>   <chr>   <chr>   <chr>   <dttm>             \n 1 161973 119 Garfi… Sugar … <NA>    400     Reside… ANNUAL… 2022-09-14 17:46:00\n 2 161957 1555 Mack  Pepsi-… <NA>    700     Manufa… ANNUAL… 2022-09-14 17:11:00\n 3 161961 13775 Bue… 13775 … <NA>    500     Mercan… ANNUAL… 2022-09-14 13:20:00\n 4 161974 18695 She… ALRO S… Alro S… 700     Manufa… ANNUAL… 2022-09-14 03:50:00\n 5 161924 18700 Mey… Home D… Home D… 500     Mercan… ANNUAL… 2022-09-13 17:37:00\n 6 161935 2131 Beau… GLEANE… <NA>    599     Busine… ANNUAL… 2022-09-13 16:00:00\n 7 161936 3579 Grat… Faygo … Faygo … 700     Manufa… ANNUAL… 2022-09-13 13:45:00\n 8 161925 7515 Lynd… Detroi… Detroi… 700     Manufa… ANNUAL… 2022-09-13 12:31:00\n 9 161929 8530 Joy   Carla … Carla … 200     Educat… ANNUAL… 2022-09-13 10:00:00\n10 161914 600 East … BCBSM … Tower … 882     Parkin… ANNUAL… 2022-09-12 15:15:00\n# … with 4 more variables: InspWithinLastYear <chr>, address_id <chr>,\n#   lon <dbl>, lat <dbl>, and abbreviated variable names ¹​OccupantName,\n#   ²​StructureName, ³​PropUseType, ⁴​PropUseTypeDescription, ⁵​InspectionType_Full\n# ℹ Use `colnames()` to see all variable names\n\n\nNull Value prevalence\n\ninspect_na(inspections) %>% show_plot()"
   },
   {
-    "objectID": "inspect_df_trial_fire_inspections.html#preparaton-of-data",
-    "href": "inspect_df_trial_fire_inspections.html#preparaton-of-data",
+    "objectID": "exemplar/inspect_df_trial_fire_inspections.html#preparaton-of-data",
+    "href": "exemplar/inspect_df_trial_fire_inspections.html#preparaton-of-data",
     "title": "Fire Inspections Overview",
     "section": "Preparaton of data",
     "text": "Preparaton of data\n\nConvert categorical data columns to data type factor\n\n# inspection, prop use types to factors\ninspections$InspectionType_Full <- as_factor(inspections$InspectionType_Full)\ninspections$PropUseType <- as_factor(inspections$PropUseType)\ninspections$PropUseTypeDescription <- as_factor(inspections$PropUseTypeDescription)\ninspections$InspWithinLastYear <- as_factor(inspections$InspWithinLastYear)\n\nData types\n\ninspect_types(inspections) %>% show_plot()\n\n\n\n\n\n# Remove 'ANNUAL ' from InspectionType_Full text strings for chart and plot\ntmp_inspections <- inspections\ntmp_inspections$InspectionType_Full <- str_sub(tmp_inspections$InspectionType_Full, 8, -1)\ntmp_inspections %>% count(InspectionType_Full, sort=TRUE)\n\n# A tibble: 23 × 2\n   InspectionType_Full      n\n   <chr>                <int>\n 1 Business Occupancy    1727\n 2 Mercantile Occupancy  1334\n 3 Assembly Occupancy     783\n 4 Repair Garage          520\n 5 Gas Station            321\n 6 Industrial Occupancy   242\n 7 Educational            127\n 8 Residential            119\n 9 High Rise              108\n10 302 Site                72\n# … with 13 more rows\n# ℹ Use `print(n = ...)` to see more rows\n\n\n\nggplot(tmp_inspections, aes(x = fct_infreq(InspectionType_Full))) + \n  geom_bar() + labs(x=\"Annual Inspection Type\", y=\"Count\") + coord_flip()\n\n\n\n\n\ninspections %>% count(PropUseType, sort=TRUE)\n\n# A tibble: 67 × 2\n   PropUseType     n\n   <fct>       <int>\n 1 500          2148\n 2 100           592\n 3 579           565\n 4 UUU           524\n 5 571           364\n 6 599           205\n 7 600           191\n 8 700            89\n 9 162            87\n10 161            75\n# … with 57 more rows\n# ℹ Use `print(n = ...)` to see more rows\n\n\n\nggplot(inspections, aes(x = fct_infreq(PropUseTypeDescription))) + \n  geom_bar() + coord_flip()\n\n\n\n\n\ninspections %>% count(PropUseTypeDescription, sort=TRUE)\n\n# A tibble: 67 × 2\n   PropUseTypeDescription                                  n\n   <fct>                                               <int>\n 1 Mercantile, Business - Other                         2148\n 2 Assembly - Other                                      592\n 3 Motor Vehicle or Boat Sales, Services, Repair         565\n 4 Undetermined                                          524\n 5 Service Station, Gas Station                          364\n 6 Business Office                                       205\n 7 Ind., Utility, Defense, Agriculture, Mining - Other   191\n 8 Manufacturing, Processing                              89\n 9 Bar or Nightclub                                       87\n10 Restaurant or Cafeteria                                75\n# … with 57 more rows\n# ℹ Use `print(n = ...)` to see more rows\n\n\n\ninspections %>% count(InspWithinLastYear, sort=TRUE)\n\n# A tibble: 2 × 2\n  InspWithinLastYear     n\n  <fct>              <int>\n1 Yes                 3796\n2 No                  1803\n\nggplot(inspections, aes(x = fct_infreq(InspWithinLastYear))) + \n  geom_bar()\n\n\n\n\n\n# Need to bin by month or year - this is unbinned\n# inspections %>% select(LatestInspDate)\n# ggplot(inspections, aes(x=LatestInspDate)) + stat_count(geom='point')\n\n\ninspect_imb(inspections) %>% show_plot()\n\n\n\n\n\ninspect_cat(inspections)\n\n# A tibble: 9 × 5\n  col_name                 cnt common                       common_pcnt levels  \n  <chr>                  <int> <chr>                              <dbl> <named >\n1 Address                 5593 1249 Washington Boulevard         0.0357 <tibble>\n2 address_id              5213 <NA>                              6.57   <tibble>\n3 InspectionType_Full       23 ANNUAL Business Occupancy        30.8    <tibble>\n4 InspWithinLastYear         2 Yes                              67.8    <tibble>\n5 IO_ID                   5599 100051                            0.0179 <tibble>\n6 OccupantName            5266 Metro PCS                         0.697  <tibble>\n7 PropUseType               67 500                              38.4    <tibble>\n8 PropUseTypeDescription    67 Mercantile, Business - Other     38.4    <tibble>\n9 StructureName           3153 <NA>                             34.7    <tibble>\n\n\n\ninspections %>% distinct(PropUseType, PropUseTypeDescription)  #%>% select(PropUseType, PropUseTypeDescription)\n\n# A tibble: 67 × 2\n   PropUseType PropUseTypeDescription                             \n   <fct>       <fct>                                              \n 1 400         Residential - Other                                \n 2 700         Manufacturing, Processing                          \n 3 500         Mercantile, Business - Other                       \n 4 599         Business Office                                    \n 5 200         Educational - Other                                \n 6 882         Parking Garage, General Vehicle                    \n 7 571         Service Station, Gas Station                       \n 8 600         Ind., Utility, Defense, Agriculture, Mining - Other\n 9 100         Assembly - Other                                   \n10 254         Day Care, In Commercial Property                   \n# … with 57 more rows\n# ℹ Use `print(n = ...)` to see more rows\n\n\n\ninspections %>% arrange(PropUseType) %>% distinct(PropUseTypeDescription) %>% arrange(.by_group = TRUE)\n\n# A tibble: 67 × 1\n   PropUseTypeDescription                             \n   <fct>                                              \n 1 Residential - Other                                \n 2 Manufacturing, Processing                          \n 3 Mercantile, Business - Other                       \n 4 Business Office                                    \n 5 Educational - Other                                \n 6 Parking Garage, General Vehicle                    \n 7 Service Station, Gas Station                       \n 8 Ind., Utility, Defense, Agriculture, Mining - Other\n 9 Assembly - Other                                   \n10 Day Care, In Commercial Property                   \n# … with 57 more rows\n# ℹ Use `print(n = ...)` to see more rows"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "odp_meta_preview",
+    "section": "",
+    "text": "To learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "data_dot_gov.html",
+    "href": "data_dot_gov.html",
+    "title": "AGO-DCAT-Data.gov",
+    "section": "",
+    "text": "The Data.gov website serves as a centralized data catalog the public can use to discover public data. The primary focus is federal data though state, local, and NGO’s are invited to have catalog, data set, and data distribution metadata included in the catalog. To do so, organizations can sign up to have metadata harvested through a DCAT-US 1.1 compliant API. ArcGIS Online (AGO) provides such an endpoint and therefore offers an approach to having ODP data from AGO included in the Data.gov catalog fairly easily. Additions, updates, and deletions to the Data.gov catalog occur through the harvest source rather than within Data.gov directly. Data.gov synchronizes changes daily through a harvest job."
+  },
+  {
+    "objectID": "data_dot_gov.html#requirements-for-adding-non-federal-government-data-to-data.gov",
+    "href": "data_dot_gov.html#requirements-for-adding-non-federal-government-data-to-data.gov",
+    "title": "AGO-DCAT-Data.gov",
+    "section": "Requirements for adding non-federal government data to Data.gov",
+    "text": "Requirements for adding non-federal government data to Data.gov\nGithub issue #1168 provides an overview of steps required to have Detroit’s ODP metadata harvested by Data.gov.\nThe article “How to get your Open Data on Data.gov” provides instructions for having Open Data harvested by Data.gov and includes details specific to non-federal governments.\nIn brief, requirements for adding local government data that would need to be completed are:\n\nA data.json endpoint that can be harvested by the Data.gov catalog with metadata that meets minimum criteria required of non-federal government entities. DCAT-US schema version 1.1 metadata requirements are published on resources.data.gov. The jsonld schema URL for DCAT 1.1 is https://project-open-data.cio.gov/v1.1/schema/catalog.jsonld.\n\nTo do: Develop a terms of use / data policy for data sets shared through the Detroit Open Data Portal. To be in compliance with data.gov requirements, this policy should be accessible via a stable URL.\nFor review: Identify a single point of contact to which/whom data.gov staff can refer questions about Detroit data sets. This point of contact should be able to triage questions about Detroit data.\nTo do: Ensure every data set meets the minimum metadata requirements. To help with this, metadata can be validated using a .json catalog endpoint or by file upload at https://labs.data.gov/dashboard/validate . Preliminary results from an initial validation of our catalog are being analyzed.\nTo do: Review metadata and text formatting of metadata entries as shared through the DCAT json endpoint available from AGO. Special attention should be paid to metadata added with html formatting in ‘description’ fields.\nTo do: Evaluate the interpretability of local metadata in the broader Data.gov context.\nTo do: Review the catalog of data sets available via our JSON endpoint and determine if all are appropriate to share via Data.gov. If any data set is not suitable to share through the catalog, methods to exclude such datasets would need to be identified and implemented."
+  },
+  {
+    "objectID": "data_dot_gov.html#information-required-when-registering-to-have-local-data-added-to-data.gov",
+    "href": "data_dot_gov.html#information-required-when-registering-to-have-local-data-added-to-data.gov",
+    "title": "AGO-DCAT-Data.gov",
+    "section": "Information required when registering to have local data added to Data.gov",
+    "text": "Information required when registering to have local data added to Data.gov\nLocal governments and others are invited sign up to have local data federated to Data.gov.\nWhen doing so, the following information is requested:\n\nName of the governement entity\nName and email address of individual requesting to have data catalog included\nData Catalog Data.json URL\nData Catalog Terms of Use URL\nAdditionally, details about data included in the catalog from other sources such as the Federal Government, State Government, or a non-profit is requested."
+  },
+  {
+    "objectID": "data_dot_gov.html#metadata-validation-errors-from-oct-07",
+    "href": "data_dot_gov.html#metadata-validation-errors-from-oct-07",
+    "title": "AGO-DCAT-Data.gov",
+    "section": "Metadata validation errors from Oct 07",
+    "text": "Metadata validation errors from Oct 07\n\nlibrary(jsonlite)\nlibrary(listviewer)\n\nBrowse json file\n\ndcat_errors <- fromJSON(\"https://dashboard.data.gov/validate?schema=non-federal-v1.1&output=json&datajson_url=https%3A%2F%2Fdata.detroitmi.gov%2F%2Fapi%2Ffeed%2Fdcat-us%2F1.1.json&qa=true\")\n\n\nlistviewer::jsonedit(dcat_errors, height = \"800px\", mode = \"view\")"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
   }
 ]

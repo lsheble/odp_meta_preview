@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.189">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>ODP Metadata Docs Preview - AGO-DCAT-Data.gov</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./about.html" rel="next">
+<link href="./exemplar/fire_inspections.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script src="docs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="docs/jsoneditor-5.25.6/jsoneditor.min.css" rel="stylesheet">
+<script src="docs/jsoneditor-5.25.6/jsoneditor.min.js"></script>
+<script src="docs/jsonedit-binding-3.0.0/jsonedit.js"></script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">AGO-DCAT-Data.gov</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">ODP Metadata Docs Preview</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Home</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./exemplar/index.html" class="sidebar-item-text sidebar-link">Metadata exemplar</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exemplar/inspect_df_trial_fire_inspections.html" class="sidebar-item-text sidebar-link">Fire Inspections Overview</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data_dot_gov.html" class="sidebar-item-text sidebar-link active">federate catalog</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./about.html" class="sidebar-item-text sidebar-link">About</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#requirements-for-adding-non-federal-government-data-to-data.gov" id="toc-requirements-for-adding-non-federal-government-data-to-data.gov" class="nav-link active" data-scroll-target="#requirements-for-adding-non-federal-government-data-to-data.gov">Requirements for adding non-federal government data to Data.gov</a></li>
+  <li><a href="#information-required-when-registering-to-have-local-data-added-to-data.gov" id="toc-information-required-when-registering-to-have-local-data-added-to-data.gov" class="nav-link" data-scroll-target="#information-required-when-registering-to-have-local-data-added-to-data.gov">Information required when registering to have local data added to Data.gov</a></li>
+  <li><a href="#metadata-validation-errors-from-oct-07" id="toc-metadata-validation-errors-from-oct-07" class="nav-link" data-scroll-target="#metadata-validation-errors-from-oct-07">Metadata validation errors from Oct 07</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/lsheble/odp_meta_preview/edit/main/data_dot_gov.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/lsheble/odp_meta_preview/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">AGO-DCAT-Data.gov</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<p>The Data.gov website serves as a centralized data catalog the public can use to discover public data. The primary focus is federal data though state, local, and NGO’s are invited to have catalog, data set, and data distribution metadata included in the catalog. To do so, organizations can sign up to have metadata harvested through a DCAT-US 1.1 compliant API. ArcGIS Online (AGO) provides such an endpoint and therefore offers an approach to having ODP data from AGO included in the Data.gov catalog fairly easily. Additions, updates, and deletions to the Data.gov catalog occur through the harvest source rather than within Data.gov directly. Data.gov synchronizes changes daily through a harvest job.</p>
+<section id="requirements-for-adding-non-federal-government-data-to-data.gov" class="level2">
+<h2 class="anchored" data-anchor-id="requirements-for-adding-non-federal-government-data-to-data.gov">Requirements for adding non-federal government data to Data.gov</h2>
+<p><a href="https://github.com/CityOfDetroit/data-engineering/issues/1168">Github issue #1168</a> provides an overview of steps required to have Detroit’s ODP metadata harvested by Data.gov.</p>
+<p>The article <a href="https://resources.data.gov/resources/data-gov-open-data-howto/">“How to get your Open Data on Data.gov”</a> provides instructions for having Open Data harvested by Data.gov and includes details specific to non-federal governments.</p>
+<p>In brief, requirements for adding local government data that would need to be completed are:</p>
+<ol type="1">
+<li>A data.json endpoint that can be harvested by the Data.gov catalog with metadata that meets minimum criteria required of non-federal government entities. <a href="https://resources.data.gov/resources/dcat-us/">DCAT-US schema version 1.1</a> metadata requirements are published on resources.data.gov. The jsonld schema URL for DCAT 1.1 is https://project-open-data.cio.gov/v1.1/schema/catalog.jsonld.<br>
+</li>
+<li><strong>To do</strong>: Develop a terms of use / data policy for data sets shared through the Detroit Open Data Portal. To be in compliance with data.gov requirements, this policy should be accessible via a stable URL.</li>
+<li><strong>For review</strong>: Identify a single point of contact to which/whom data.gov staff can refer questions about Detroit data sets. This point of contact should be able to triage questions about Detroit data.</li>
+<li><strong>To do</strong>: Ensure every data set meets the minimum metadata requirements. To help with this, metadata can be validated using a .json catalog endpoint or by file upload at https://labs.data.gov/dashboard/validate . Preliminary results from an initial validation of our catalog are being analyzed.</li>
+<li><strong>To do</strong>: Review metadata and text formatting of metadata entries as shared through the DCAT json endpoint available from AGO. Special attention should be paid to metadata added with html formatting in ‘description’ fields.</li>
+<li><strong>To do</strong>: Evaluate the interpretability of local metadata in the broader Data.gov context.</li>
+<li><strong>To do</strong>: Review the catalog of data sets available via our JSON endpoint and determine if all are appropriate to share via Data.gov. If any data set is not suitable to share through the catalog, methods to exclude such datasets would need to be identified and implemented.</li>
+</ol>
+</section>
+<section id="information-required-when-registering-to-have-local-data-added-to-data.gov" class="level2">
+<h2 class="anchored" data-anchor-id="information-required-when-registering-to-have-local-data-added-to-data.gov">Information required when registering to have local data added to Data.gov</h2>
+<p>Local governments and others are invited <a href="https://data.gov/local/add/">sign up</a> to have local data federated to Data.gov.</p>
+<p>When doing so, the following information is requested:</p>
+<ul>
+<li>Name of the governement entity</li>
+<li>Name and email address of individual requesting to have data catalog included</li>
+<li>Data Catalog Data.json URL</li>
+<li>Data Catalog Terms of Use URL</li>
+<li>Additionally, details about data included in the catalog from other sources such as the Federal Government, State Government, or a non-profit is requested.</li>
+</ul>
+</section>
+<section id="metadata-validation-errors-from-oct-07" class="level2">
+<h2 class="anchored" data-anchor-id="metadata-validation-errors-from-oct-07">Metadata validation errors from Oct 07</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(jsonlite)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(listviewer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Browse json file</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>dcat_errors <span class="ot">&lt;-</span> <span class="fu">fromJSON</span>(<span class="st">"https://dashboard.data.gov/validate?schema=non-federal-v1.1&amp;output=json&amp;datajson_url=https%3A%2F%2Fdata.detroitmi.gov%2F%2Fapi%2Ffeed%2Fdcat-us%2F1.1.json&amp;qa=true"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>listviewer<span class="sc">::</span><span class="fu">jsonedit</span>(dcat_errors, <span class="at">height =</span> <span class="st">"800px"</span>, <span class="at">mode =</span> <span class="st">"view"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="htmlwidget-a8d507a0046994a0fc38" style="width:672px;height:800px;" class="jsonedit html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a8d507a0046994a0fc38">{"x":{"data":{"errors":{"contactPoint.hasEmail":{"errors":["Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$","Does not match the regex pattern ^mailto:[\\w\\_\\~\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=\\:.-]+@[\\w.-]+\\.[\\w.-]+?$"]},"license":{"errors":[["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"],["Invalid URL format","String value found, but a null is required","Failed to match at least one schema"]]},"description":{"errors":[[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],"Must be at least 1 characters long",[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]]},"keyword":{"errors":[[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],"There must be a minimum of 1 items in the array","There must be a minimum of 1 items in the array","There must be a minimum of 1 items in the array","There must be a minimum of 1 items in the array",[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]]}},"qa":{"accessLevel_public":171,"accessLevel_restricted":0,"accessLevel_nonpublic":0,"accessURL_present":171,"accessURL_total":892,"API_total":0,"API_public":0,"API_restricted":0,"API_nonpublic":0,"collections_total":0,"non_collection_total":171,"validation_counts":{"http_5xx":0,"http_4xx":0,"http_3xx":0,"http_2xx":0,"http_0":0,"pdf":0,"html":0,"format_mismatch":0},"license_present":0,"redaction_present":0,"redaction_no_explanation":0,"downloadURL_present":0,"downloadURL_total":0},"schema_version":"non-federal-v1.1","valid":false,"valid_json":true,"total_records":171,"download_content_length":486749},"options":{"mode":"view","modes":["code","form","text","tree","view"]}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./exemplar/fire_inspections.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./about.html" class="pagination-link">
+        <span class="nav-page-text">About</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

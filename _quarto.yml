@@ -2,17 +2,27 @@ project:
   type: website
   output-dir: docs
   resources: 
-  - fire_inspections.html
+    - "*.html"
 
 website:
-  title: "odp_meta_preview"
-  navbar:
-    left:
+  page-navigation: true
+  title: "ODP Metadata Docs Preview"
+  repo-url: "https://github.com/lsheble/odp_meta_preview"
+  repo-actions: [edit, issue]
+  
+  sidebar:
+    style: "docked"
+    contents:
       - href: index.qmd
         text: Home
-      - inspect_df_trial_fire_inspections.Rmd
-      - fire_inspections.html
+      - section: exemplar/index.qmd
+        contents:
+          - exemplar/inspect_df_trial_fire_inspections.Rmd
+          - exemplar/fire_inspections.html
+      - href: data_dot_gov.qmd
+        text: federate catalog
       - about.qmd
+
 
 format:
   html:

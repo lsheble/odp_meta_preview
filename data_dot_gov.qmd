@@ -1,0 +1,62 @@
+---
+title: "AGO-DCAT-Data.gov"
+format: html
+---
+
+
+The Data.gov website serves as a centralized data catalog the public can use to discover public data. The primary focus is federal data though state, local, and NGO's are invited to have catalog, data set, and data distribution metadata included in the catalog. To do so, organizations can sign up to have metadata harvested through a DCAT-US 1.1 compliant API. ArcGIS Online (AGO) provides such an endpoint and therefore offers an approach to having ODP data from AGO included in the Data.gov catalog fairly easily. Additions, updates, and deletions to the Data.gov catalog occur through the harvest source rather than within Data.gov directly. Data.gov synchronizes changes daily through a harvest job.
+
+
+
+## Requirements for adding non-federal government data to Data.gov
+
+[Github issue #1168](https://github.com/CityOfDetroit/data-engineering/issues/1168) provides an overview of steps required to have Detroit's ODP metadata harvested by Data.gov.
+
+
+The article ["How to get your Open Data on Data.gov"](https://resources.data.gov/resources/data-gov-open-data-howto/) provides instructions for having Open Data harvested by Data.gov and includes details specific to non-federal governments. 
+
+In brief, requirements for adding local government data that would need to be completed are:
+
+1. A data.json endpoint that can be harvested by the Data.gov catalog with metadata that meets minimum criteria required of non-federal government entities.  [DCAT-US schema version 1.1](https://resources.data.gov/resources/dcat-us/) metadata requirements are published on resources.data.gov. The jsonld schema URL for DCAT 1.1 is https://project-open-data.cio.gov/v1.1/schema/catalog.jsonld.  
+2. **To do**: Develop a terms of use / data policy for data sets shared through the Detroit Open Data Portal. To be in compliance with data.gov requirements, this policy should be accessible via a stable URL. 
+3. **For review**: Identify a single point of contact to which/whom data.gov staff can refer questions about Detroit data sets. This point of contact should be able to triage questions about Detroit data.
+4. **To do**: Ensure every data set meets the minimum metadata requirements. To help with this, metadata can be validated using a .json catalog endpoint or by file upload at https://labs.data.gov/dashboard/validate . Preliminary results from an initial validation of our catalog are being analyzed.
+5. **To do**: Review metadata and text formatting of metadata entries as shared through the DCAT json endpoint available from AGO. Special attention should be paid to metadata added with html formatting in 'description' fields.
+6. **To do**: Evaluate the interpretability of local metadata in the broader Data.gov context.
+7. **To do**: Review the catalog of data sets available via our JSON endpoint and determine if all are appropriate to share via Data.gov. If any data set is not suitable to share through the catalog, methods to exclude such datasets would need to be identified and implemented.
+
+
+
+## Information required when registering to have local data added to Data.gov
+
+Local governments and others are invited [sign up](https://data.gov/local/add/) to have local data federated to Data.gov. 
+
+When doing so, the following information is requested:
+
+- Name of the governement entity
+- Name and email address of individual requesting to have data catalog included
+- Data Catalog Data.json URL
+- Data Catalog Terms of Use URL
+- Additionally, details about data included in the catalog from other sources such as the Federal Government, State Government, or a non-profit is requested.
+
+
+## Metadata validation errors from Oct 07
+
+
+```{r}
+library(jsonlite)
+library(listviewer)
+```
+
+
+Browse json file
+```{r}
+dcat_errors <- fromJSON("https://dashboard.data.gov/validate?schema=non-federal-v1.1&output=json&datajson_url=https%3A%2F%2Fdata.detroitmi.gov%2F%2Fapi%2Ffeed%2Fdcat-us%2F1.1.json&qa=true")
+
+```
+
+
+```{r}
+listviewer::jsonedit(dcat_errors, height = "800px", mode = "view")
+```
+

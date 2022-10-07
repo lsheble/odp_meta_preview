@@ -1,0 +1,24 @@
+---
+title: "Metadata exemplar"
+---
+
+## Metadata exemplar files 
+
+### Creating metadata
+
+
+### Reviewing data
+
+
+### HTML Preview
+
+
+### AGO Metadata page
+
+
+### DCAT-US v 1.1 schema from AGO
+
+
+### Data dictionary formats 
+
+
