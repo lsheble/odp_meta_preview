@@ -3,11 +3,12 @@ title: "Fire Inspections Overview"
 output:
   html_document:
     df_print: paged
+    code_folding: hide
 ---
 
 
 
-```{r load_libraries, echo=FALSE}
+```{r load_libraries, echo=FALSE, }
 library(readr)
 library(inspectdf)
 library(stringr)
@@ -20,7 +21,7 @@ library(ggplot2)
 ```
 
 
-```{r load_data}
+```{r load_data, echo=FALSE}
 inspections <- read_csv("data/inspections_202209151519.csv", 
     col_types = cols(IO_ID = col_character(), 
         LatestInspDate = col_datetime(format = "%m/%d/%Y %H:%M"), 
