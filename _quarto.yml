@@ -1,5 +1,7 @@
 project:
   type: website
+  resources: 
+    - "fire_inspections.html"
   output-dir: docs
 
 website:
