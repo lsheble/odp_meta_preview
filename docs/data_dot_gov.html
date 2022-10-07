@@ -169,9 +169,30 @@ ul.task-list li input[type="checkbox"] {
 <div>
 <p>
 </p><pre class="mermaid" data-tooltip-selector="#mermaid-tooltip-1">flowchart LR
-  A[(AGO &lt;br&gt; geodatabase)] -. Exposes DCATA-US v1.1 &lt;br&gt; metadata .-&gt; B[[1 Catalog record &lt;br&gt; containing &lt;br&gt; many Dataset records]] -. Harvested by &lt;br&gt; Data.gov .-&gt; C[(Data.gov &lt;br&gt; catalog)]
+  A[(AGO &lt;br&gt; geodatabase)] -. exposes DCATA-US v1.1 &lt;br&gt; metadata .-&gt; B[[1 Catalog record &lt;br&gt; containing &lt;br&gt; many Dataset records]] -. harvested by &lt;br&gt; Data.gov .-&gt; C[(Data.gov &lt;br&gt; catalog)]
 </pre>
 <div id="mermaid-tooltip-1" class="mermaidTooltip">
+
+</div>
+<p></p>
+</div>
+</div>
+</div>
+<p>Second diagram</p>
+<div class="cell" data-label="ago-records-datagov">
+<div class="cell-output-display">
+<div>
+<p>
+</p><pre class="mermaid" data-tooltip-selector="#mermaid-tooltip-2">flowchart TB
+  subgraph Catalog_Record
+    direction LR
+    d1[[Dataset &lt;br&gt; record 1]]
+    d2[[Dataset &lt;br&gt; record 2]]
+    d3[[Dataset &lt;br&gt; record n]]
+  end  
+  A[(AGO &lt;br&gt; geodatabase)] -. exposes DCATA-US v1.1 &lt;br&gt; metadata .-&gt; Catalog_Record -. harvested by &lt;br&gt; Data.gov .-&gt; C[(Data.gov &lt;br&gt; catalog)]
+</pre>
+<div id="mermaid-tooltip-2" class="mermaidTooltip">
 
 </div>
 <p></p>
