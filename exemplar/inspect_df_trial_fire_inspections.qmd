@@ -1,9 +1,8 @@
 ---
 title: "Fire Inspections Overview"
-output:
-  html_document:
-    df_print: paged
-    code-folding: true
+format:
+  html:
+    code-fold: true
 ---
 
 
