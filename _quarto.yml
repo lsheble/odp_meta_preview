@@ -17,7 +17,7 @@ website:
         text: Home
       - section: exemplar/index.qmd
         contents:
-          - exemplar/inspect_df_trial_fire_inspections.Rmd
+          - exemplar/inspect_df_trial_fire_inspections.qmd
           - exemplar/fire_inspections.html
       - href: data_dot_gov.qmd
         text: Federate catalog

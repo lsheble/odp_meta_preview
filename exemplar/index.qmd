@@ -12,7 +12,7 @@ resources: fire_inspections.html
 
 ## HTML Preview
 
-[html link](fire_inspections.html)
+[HTML display mockup](fire_inspections.html)
 
 
 ## Metadata on AGO

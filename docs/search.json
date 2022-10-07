@@ -4,7 +4,7 @@
     "href": "exemplar/inspect_df_trial_fire_inspections.html",
     "title": "Fire Inspections Overview",
     "section": "",
-    "text": "Attaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union"
+    "text": "library(readr)\nlibrary(inspectdf)\nlibrary(stringr)\nlibrary(forcats)\nlibrary(dplyr)\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\n# library(lubridate)\nlibrary(ggplot2)\n#library(ggsankey)"
   },
   {
     "objectID": "exemplar/inspect_df_trial_fire_inspections.html#overview",
@@ -74,7 +74,7 @@
     "href": "exemplar/index.html#html-preview",
     "title": "Metadata exemplar",
     "section": "HTML Preview",
-    "text": "HTML Preview\nhtml link"
+    "text": "HTML Preview\nHTML display mockup"
   },
   {
     "objectID": "exemplar/index.html#metadata-on-ago",

@@ -1,0 +1,135 @@
+---
+title: "Fire Inspections Overview"
+output:
+  html_document:
+    df_print: paged
+    code-folding: true
+---
+
+
+
+```{r} 
+#| Label: load-libraries
+library(readr)
+library(inspectdf)
+library(stringr)
+library(forcats)
+library(dplyr)
+# library(lubridate)
+library(ggplot2)
+#library(ggsankey)
+
+```
+
+
+```{r} 
+#| Label: load-data
+inspections <- read_csv("data/inspections_202209151519.csv", 
+    col_types = cols(IO_ID = col_character(), 
+        LatestInspDate = col_datetime(format = "%m/%d/%Y %H:%M"), 
+        InspWithinLastYear = col_character(),
+        address_id = col_character()))
+```
+
+
+## Overview
+```{r}
+#| Label: data-overview
+head(inspections, 10)
+```
+
+
+
+Null Value prevalence
+```{r}
+#| Label: null-overview
+inspect_na(inspections) %>% show_plot()
+```
+
+## Preparaton of data
+
+### Convert categorical data columns to data type factor
+
+```{r}
+# inspection, prop use types to factors
+inspections$InspectionType_Full <- as_factor(inspections$InspectionType_Full)
+inspections$PropUseType <- as_factor(inspections$PropUseType)
+inspections$PropUseTypeDescription <- as_factor(inspections$PropUseTypeDescription)
+inspections$InspWithinLastYear <- as_factor(inspections$InspWithinLastYear)
+```
+
+Data types
+```{r}
+#| Label: types
+inspect_types(inspections) %>% show_plot()
+```
+
+
+```{r}
+# Remove 'ANNUAL ' from InspectionType_Full text strings for chart and plot
+tmp_inspections <- inspections
+tmp_inspections$InspectionType_Full <- str_sub(tmp_inspections$InspectionType_Full, 8, -1)
+tmp_inspections %>% count(InspectionType_Full, sort=TRUE)
+
+```
+
+
+```{r}
+ggplot(tmp_inspections, aes(x = fct_infreq(InspectionType_Full))) + 
+  geom_bar() + labs(x="Annual Inspection Type", y="Count") + coord_flip()
+```
+
+
+
+```{r}
+inspections %>% count(PropUseType, sort=TRUE)
+
+
+```
+
+
+```{r}
+ggplot(inspections, aes(x = fct_infreq(PropUseTypeDescription))) + 
+  geom_bar() + coord_flip()
+```
+
+
+
+```{r}
+inspections %>% count(PropUseTypeDescription, sort=TRUE)
+```
+
+```{r}
+inspections %>% count(InspWithinLastYear, sort=TRUE)
+ggplot(inspections, aes(x = fct_infreq(InspWithinLastYear))) + 
+  geom_bar()
+```
+
+
+```{r}
+# Need to bin by month or year - this is unbinned
+# inspections %>% select(LatestInspDate)
+# ggplot(inspections, aes(x=LatestInspDate)) + stat_count(geom='point')
+```
+
+
+
+```{r}
+inspect_imb(inspections) %>% show_plot()
+```
+
+
+```{r}
+inspect_cat(inspections)
+```
+
+
+```{r}
+inspections %>% distinct(PropUseType, PropUseTypeDescription)  #%>% select(PropUseType, PropUseTypeDescription)
+```
+
+
+```{r}
+inspections %>% arrange(PropUseType) %>% distinct(PropUseTypeDescription) %>% arrange(.by_group = TRUE)
+```
+
