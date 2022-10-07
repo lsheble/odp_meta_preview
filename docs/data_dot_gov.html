@@ -60,6 +60,9 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="styles.css">
@@ -161,6 +164,20 @@ ul.task-list li input[type="checkbox"] {
 <section id="requirements-for-adding-non-federal-government-data-to-data.gov" class="level2">
 <h2 class="anchored" data-anchor-id="requirements-for-adding-non-federal-government-data-to-data.gov">Requirements for adding non-federal government data to Data.gov</h2>
 <p><a href="https://github.com/CityOfDetroit/data-engineering/issues/1168">Github issue #1168</a> provides an overview of steps required to have Detroit’s ODP metadata harvested by Data.gov.</p>
+<div class="cell" data-label="ago-to-datagov">
+<div class="cell-output-display">
+<div>
+<p>
+</p><pre class="mermaid" data-tooltip-selector="#mermaid-tooltip-1">flowchart LR
+  A[(AGO &lt;br&gt; geodatabase)] -. Exposes DCATA-US v1.1 &lt;br&gt; metadata .-&gt; B[[1 Catalog record &lt;br&gt; containing &lt;br&gt; many Dataset records]] -. Harvested by &lt;br&gt; Data.gov .-&gt; C[(Data.gov &lt;br&gt; catalog)]
+</pre>
+<div id="mermaid-tooltip-1" class="mermaidTooltip">
+
+</div>
+<p></p>
+</div>
+</div>
+</div>
 <p>The article <a href="https://resources.data.gov/resources/data-gov-open-data-howto/">“How to get your Open Data on Data.gov”</a> provides instructions for having Open Data harvested by Data.gov and includes details specific to non-federal governments.</p>
 <p>In brief, requirements for adding local government data that would need to be completed are:</p>
 <ol type="1">
