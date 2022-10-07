@@ -1,0 +1,385 @@
+<html>
+  <head>
+    <title>Fire Inspections</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="application/ld+json">
+      {
+
+  "@context": "http://schema.org",
+
+  "type": "Dataset",
+
+  "name": "Fire Inspections",
+
+  "creator": [
+
+    {
+
+      "type": "Person",
+
+      "id": "coddfd02",
+
+      "email": "na",
+
+      "affiliation": "City of Detroit",
+
+      "name": "Detroit Fire Department (DFD)"
+
+    }
+
+  ],
+
+  "description": "Annual Life Safety Fire Inspections are conducted by the Detroit Fire Department (DFD) Fire Marshall Division in accordance with Chapter 18 of the Detroit City Code, the Detroit Fire Prevention and Protection Code.  Inspections occur as a part of routine daily district work in support of the core mission of the DFD Fire Marshall Division \"to provide the citizens and visitors of Detroit with the highest level of fire prevention using standards and guidelines set forth by the Michigan Building Code, City Ordinance and the NFPA (National Fire Protection Association)\".  Inspections are also conducted to fulfill City of Detroit (CoD) Business Licensing requirements. Business owners required to obtain or renew a CoD Business License from Buildings, Safety Engineering, and Environment Department (BSEED) must get a Fire Permit from the Fire Marshall division as a part of the licensing process. The Permit certifies that the business premises have undergone and passed a Life Safety Fire Inspection within the past 12 months.",
+
+  "datePublished": "2022-09-21",
+
+  "keywords": ["public safety", "fire", "businesses", "inspections", "certifications"],
+
+  "funder": null,
+
+  "temporalCoverage": "2009-08-18/2022-09-14",
+
+  "license": "TBD",
+
+  "spatialCoverage": {
+
+    "type": "Place",
+
+    "name": "Detroit, Michigan",
+
+    "geo": {
+
+      "type": "GeoShape",
+
+      "box": "42.44993 -82.91111 42.26227 -83.287"
+
+    }
+
+  },
+
+  "variableMeasured": [
+
+    {
+
+      "type": "PropertyValue",
+
+      "unitText": null,
+
+      "name": "IO_id",
+
+      "description": "The internal inspection ID assigned by the mobileyes system used by DFD to record fire inspection data"
+
+    },
+
+    {
+
+      "type": "PropertyValue",
+
+      "unitText": null,
+
+      "name": "Address",
+
+      "description": "Street address of  the inspected structure includes street number,  direction, name, and type. Unit designators are included on an ad hoc basis."
+
+    },
+
+    {
+
+      "type": "PropertyValue",
+
+      "unitText": null,
+
+      "name": "OccupantName",
+
+      "description": "The business or organizational name of  the occupant of the property as provided by the occupant  or available in previous fire inspection records."
+
+    },
+
+    {
+
+      "type": "PropertyValue",
+
+      "unitText": null,
+
+      "name": "StructureName",
+
+      "description": "The name of the structure assigned by the DFD Fire Marshal division on an ad hoc basis  during the inspection process."
+
+    },
+
+    {
+
+      "type": "PropertyValue",
+
+      "unitText": null,
+
+      "name": "PropUseType",
+
+      "description": "The 3-digit National Fire Incident  Reporting System (NFIRS) Property Use Type code (if assigned) for the  occupant. Property use (in NFIRS 5.0) refers to the actual use of the  property, not the overall use of mixed use properties. Property  use types are assigned by inspectors during an initial inspection and are  retained for subsequent inspections for an occupant. "
+
+    },
+
+    {
+
+      "type": "PropertyValue",
+
+      "unitText": null,
+
+      "name": "PropUseTypeDescription",
+
+      "description": "Standardized National Fire Incident  Reporting System (NFIRS 5.0) Property Use Type code descriptions. For more information, see:  https://www.usfa.fema.gov/nfirs/documentation/"
+
+    },
+
+    {
+
+      "type": "PropertyValue",
+
+      "unitText": null,
+
+      "name": "InspectionType_Full",
+
+      "description": "Type of inspection performed at the  address"
+
+    },
+
+    {
+
+      "type": "PropertyValue",
+
+      "unitText": null,
+
+      "name": "LatestInspDate",
+
+      "description": "The most recent date of an annual inspection on record"
+
+    },
+
+    {
+
+      "type": "PropertyValue",
+
+      "unitText": null,
+
+      "name": "InspWithinLastYear",
+
+      "description": "The most recent annual inspection date is  within one calendar year"
+
+    }
+
+  ],
+
+  "distribution": [
+
+    {
+
+      "type": "DataDownload",
+
+      "name": "fire_inspections",
+
+      "contentUrl": "https://data.detroitmi.gov/search?q=fire%20"
+
+      "encodingFormat": "csv"
+
+    }
+
+  ]
+
+}
+
+
+    </script>
+    <style>
+      body {
+        font-size: 16px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        margin: 0 auto;
+        padding: 1rem;
+        max-width: 800px;
+      }
+
+      #map {
+        height: 20rem;
+      }
+
+      #attributes-wrapper,
+      #jsonld-wrapper {
+        height: 20rem;
+        overflow-y: scroll;
+      }
+
+      table {
+        border-collapse: collapse;
+      }
+
+      th {
+        border-bottom: 1px solid black;
+      }
+
+      th, td {
+        padding: 0.25rem;
+      }
+
+      table.listing td {
+        border: 1px solid #CCC;
+      }
+
+      table.listing tr td:first-child {
+          background-color: #EEE;
+      }
+
+      table.listing ul {
+        margin: 0 0 0 1.5rem;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Fire Inspections</h1>
+    <p><strong>Description:</strong> Annual Life Safety Fire Inspections are conducted by the Detroit Fire Department (DFD) Fire Marshall Division in accordance with Chapter 18 of the Detroit City Code, the Detroit Fire Prevention and Protection Code.  Inspections occur as a part of routine daily district work in support of the core mission of the DFD Fire Marshall Division &quot;to provide the citizens and visitors of Detroit with the highest level of fire prevention using standards and guidelines set forth by the Michigan Building Code, City Ordinance and the NFPA (National Fire Protection Association)&quot;.  Inspections are also conducted to fulfill City of Detroit (CoD) Business Licensing requirements. Business owners required to obtain or renew a CoD Business License from Buildings, Safety Engineering, and Environment Department (BSEED) must get a Fire Permit from the Fire Marshall division as a part of the licensing process. The Permit certifies that the business premises have undergone and passed a Life Safety Fire Inspection within the past 12 months.</p>
+
+    <h2>Bibliographic</h2>
+
+    <table class="listing">
+      <tr>
+        <td>Published</td>
+        <td>2022-09-21</td>
+      </tr>
+      <tr>
+        <td>Keywords</td>
+        <td>
+          <ul>
+            <li>public safety</li>
+            <li>fire</li>
+            <li>businesses</li>
+            <li>inspections</li>
+            <li>certifications</li>
+        </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Funder</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>License</td>
+        <td>TBD</td>
+      </tr>
+    </table>
+
+    <h2>Coverage</h2>
+
+    <h3>Temporal</h3>
+
+    <table class="listing">
+      <tr>
+        <td>Begin</td>
+        <td>2009-08-18</td>
+      </tr>
+      <tr>
+        <td>End</td>
+        <td>2022-09-14</td>
+      </tr>
+    </table>
+
+    <h3>Spatial</h3>
+    <pre><code></code></pre>
+    <div id="map"></div>
+
+    <h2>Attributes</h2>
+
+    <div id="attributes-wrapper">
+      <table id="attributes">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Unit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>IO_id</code></td>
+            <td>The internal inspection ID assigned by the mobileyes system used by DFD to record fire inspection data</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><code>Address</code></td>
+            <td>Street address of  the inspected structure includes street number,  direction, name, and type. Unit designators are included on an ad hoc basis.</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><code>OccupantName</code></td>
+            <td>The business or organizational name of  the occupant of the property as provided by the occupant  or available in previous fire inspection records.</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><code>StructureName</code></td>
+            <td>The name of the structure assigned by the DFD Fire Marshal division on an ad hoc basis  during the inspection process.</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><code>PropUseType</code></td>
+            <td>The 3-digit National Fire Incident  Reporting System (NFIRS) Property Use Type code (if assigned) for the  occupant. Property use (in NFIRS 5.0) refers to the actual use of the  property, not the overall use of mixed use properties. Property  use types are assigned by inspectors during an initial inspection and are  retained for subsequent inspections for an occupant. </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><code>PropUseTypeDescription</code></td>
+            <td>Standardized National Fire Incident  Reporting System (NFIRS 5.0) Property Use Type code descriptions. For more information, see:  https://www.usfa.fema.gov/nfirs/documentation/</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><code>InspectionType_Full</code></td>
+            <td>Type of inspection performed at the  address</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><code>LatestInspDate</code></td>
+            <td>The most recent date of an annual inspection on record</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><code>InspWithinLastYear</code></td>
+            <td>The most recent annual inspection date is  within one calendar year</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Distribution</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>File</th>
+          <th>Format</th>
+          <th>&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>fire_inspections</code></td>
+          <td><code>csv</code></td>
+          <td><a href="https://data.detroitmi.gov/search?q=fire%20">Download</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+  integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+  crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+  integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+  crossorigin=""></script>
+    <script>
+      var mymap = L.map('map').setView([42.3561, -83.099055], 1);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+        maxZoom: 18,
+      }).addTo(mymap);
+
+      var polygon = L.polygon([[ 42.44993, -82.91111], [ 42.26227, -82.91111], [ 42.26227, -83.287], [ 42.44993, -83.287]]).addTo(mymap);
+    </script>
+  </body>
+</html>
