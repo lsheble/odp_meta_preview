@@ -40,23 +40,3 @@ When doing so, the following information is requested:
 - Additionally, details about data included in the catalog from other sources such as the Federal Government, State Government, or a non-profit is requested.
 
 
-## Metadata validation errors from Oct 07
-
-
-```{r}
-library(jsonlite)
-library(listviewer)
-```
-
-
-Browse json file
-```{r}
-dcat_errors <- fromJSON("https://dashboard.data.gov/validate?schema=non-federal-v1.1&output=json&datajson_url=https%3A%2F%2Fdata.detroitmi.gov%2F%2Fapi%2Ffeed%2Fdcat-us%2F1.1.json&qa=true")
-
-```
-
-
-```{r}
-listviewer::jsonedit(dcat_errors, height = "800px", mode = "view")
-```
-
