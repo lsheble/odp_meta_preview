@@ -25,7 +25,6 @@ Through the ArcGIS Online Open Data Portal:
 
 ## DCAT-US v 1.1 schema from AGO
 
-
 ## Data dictionary formats 
 
 

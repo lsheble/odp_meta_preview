@@ -1,6 +1,8 @@
 ---
 title: "AGO-DCAT-Data.gov"
-format: html
+format: 
+  html:
+    code-fold: true
 ---
 
 
@@ -10,7 +12,9 @@ The Data.gov website serves as a centralized data catalog the public can use to 
 
 ## Adding local government data to Data.gov: Requirements
 
-[Github issue #1168](https://github.com/CityOfDetroit/data-engineering/issues/1168) provides an overview of steps required to have Detroit's ODP metadata harvested by Data.gov.
+:::{.callout-caution}
+[Github issue #1168](https://github.com/CityOfDetroit/data-engineering/issues/1168) is being used to track progress on steps required to have Detroit's ODP metadata harvested by Data.gov.
+:::
 
 
 ```{mermaid}
@@ -20,19 +24,6 @@ flowchart LR
 ```
 
 
-Second diagram
-
-```{mermaid}
-%%| Label: ago-records-datagov
-flowchart TB
-  subgraph Catalog_Record
-    direction LR
-    d1[[Dataset <br> record 1]]
-    d2[[Dataset <br> record 2]]
-    d3[[Dataset <br> record n]]
-  end  
-  A[(AGO <br> geodatabase)] -. exposes DCATA-US v1.1 <br> metadata .-> Catalog_Record -. harvested by <br> Data.gov .-> C[(Data.gov <br> catalog)]
-```
 
 
 The article ["How to get your Open Data on Data.gov"](https://resources.data.gov/resources/data-gov-open-data-howto/) provides instructions for having Open Data harvested by Data.gov and includes details specific to non-federal governments. 
@@ -62,4 +53,4 @@ When doing so, the following information is requested:
 - Additionally, details about data included in the catalog from other sources such as the Federal Government, State Government, or a non-profit is requested.
 
 
-[Data error viewer](docs/federated_data_errors.html)
+
