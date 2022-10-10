@@ -143,6 +143,6 @@ inspections %>% distinct(propusetype, propusetypedescription)  #%>% select(PropU
 
 
 ```{r}
-inspections %>% arrange(propusetype) %>% distinct(propusetypedescription) %>% arrange(.by_group = TRUE)
+# inspections %>% arrange(propusetype) %>% distinct(propusetypedescription) %>% arrange(.by_group = TRUE)
 ```
 
