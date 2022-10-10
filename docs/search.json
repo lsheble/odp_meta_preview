@@ -2,7 +2,7 @@
   {
     "objectID": "exemplar/inspect_df_trial_fire_inspections.html",
     "href": "exemplar/inspect_df_trial_fire_inspections.html",
-    "title": "Fire Inspections Overview",
+    "title": "Fire Inspections Data Set Overview",
     "section": "",
     "text": "Code\nlibrary(readr)\nlibrary(inspectdf)\nlibrary(stringr)\nlibrary(forcats)\nlibrary(dplyr)\nlibrary(ggplot2)\n#library(ggsankey)\n#library(lubridate)\nFire Inspections data was downloaded in csv format from the ODP on Oct 10, 2020 to obtain a snapshot of published data after completion of the entire data processing pipeline."
   },
@@ -131,5 +131,12 @@
     "title": "Preparing ODP data for discovery through Data.gov",
     "section": "Data.gov sign-up and registration requirements",
     "text": "Data.gov sign-up and registration requirements\nLocal governments and others are invited to sign up to have local data federated to Data.gov. When doing so, the following information is requested:\n\nName of the government entity\nName and email address of individual requesting to have data catalog included\nData Catalog Data.json URL\nData Catalog Terms of Use URL\nAdditionally, details about data included in the catalog from other sources such as the Federal Government, State Government, or a non-profit is requested."
+  },
+  {
+    "objectID": "exemplar/inspect_df_trial_fire_inspections.html#dimensions-and-variables",
+    "href": "exemplar/inspect_df_trial_fire_inspections.html#dimensions-and-variables",
+    "title": "Fire Inspections Data Set Overview",
+    "section": "Dimensions and variables",
+    "text": "Dimensions and variables\nThe imported data set includes 16 variables and 5636 annual inspection records. Nine variables originate in the ingested data, and seven (X, Y, InspWithinLastYear, address_id, lon, lat, ObjectId) from data enrichment and processing activities.\n\n\nCode\ninspections\n\n\n\n\n  \n\n\n\nWhen imported, variables in the data set were assigned data types based on constituent data. Though fundamentally a logical variable, ‘InspWithinLastYear’ was treated as a factor to retain display of the labels ‘Yes’ and ‘No’.\n\n\nCode\ninspect_types(inspections) %>% show_plot()\n\n\n\n\n\n\nNull value prevalence\n\n\nCode\ninspect_na(inspections) %>% show_plot()\n\n\n\n\n\n\n\nCode\n# Remove 'ANNUAL ' from InspectionType_Full text strings for chart and plot\ntmp_inspections <- inspections\ntmp_inspections$InspectionType_Full <- str_sub(tmp_inspections$InspectionType_Full, 8, -1)\ntmp_inspections %>% count(InspectionType_Full, sort=TRUE)\n\n\n\n\n  \n\n\n\n\n\nCode\nggplot(tmp_inspections, aes(x = fct_infreq(InspectionType_Full))) + \n  geom_bar() + labs(x=\"Annual Inspection Type\", y=\"Count\") + coord_flip()\n\n\n\n\n\n\n\nCode\ninspections %>% count(propusetype, sort=TRUE)\n\n\n\n\n  \n\n\n\n\n\nCode\nggplot(inspections, aes(x = fct_infreq(propusetypedescription))) + \n  geom_bar() + coord_flip()\n\n\n\n\n\n\n\nCode\ninspections %>% count(propusetypedescription, sort=TRUE)\n\n\n\n\n  \n\n\n\n\n\nCode\ninspections %>% count(InspWithinLastYear, sort=TRUE)\n\n\n\n\n  \n\n\n\nCode\nggplot(inspections, aes(x = fct_infreq(InspWithinLastYear))) + \n  geom_bar()\n\n\n\n\n\n\n\nCode\n# Need to bin by month or year - this is unbinned\n# inspections %>% select(LatestInspDate)\n# ggplot(inspections, aes(x=LatestInspDate)) + stat_count(geom='point')\n\n\n\n\nCode\ninspect_imb(inspections) %>% show_plot()\n\n\n\n\n\n\n\nCode\ninspect_cat(inspections)\n\n\n\n\n  \n\n\n\n\n\nCode\ninspections %>% distinct(propusetype, propusetypedescription)  #%>% select(PropUseType, PropUseTypeDescription)\n\n\n\n\n  \n\n\n\n\n\nCode\ninspections %>% arrange(propusetype) %>% distinct(propusetypedescription) %>% arrange(.by_group = TRUE)"
   }
 ]

@@ -1,5 +1,5 @@
 ---
-title: "Fire Inspections Overview"
+title: "Fire Inspections Data Set Overview"
 format:
   html:
     code-fold: true
@@ -52,7 +52,7 @@ inspections <- read_csv("data/Fire_Inspections_20221010.csv",
 
 
 
-## Overview
+## Dimensions and variables
 
 The imported data set includes `r ncol(inspections)` variables and `r nrow(inspections)` annual inspection records. Nine variables originate in the ingested data, and seven (X, Y, InspWithinLastYear, address_id, lon, lat, ObjectId) from data enrichment and processing activities.
 
