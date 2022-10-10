@@ -1,5 +1,5 @@
 ---
-title: "Fire Inspections Data Set Overview"
+title: "Fire inspections data set overview"
 format:
   html:
     code-fold: true
