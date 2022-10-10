@@ -20,13 +20,13 @@ website:
           - exemplar/inspect_df_trial_fire_inspections.qmd
           - exemplar/fire_inspections.html
       - href: data_dot_gov.qmd
-        text: Federate catalog
+        text: Data discovery
       - about.qmd
 
 
 format:
   html:
-    theme:
+    theme: default
     css: styles.css
     toc: true
 
