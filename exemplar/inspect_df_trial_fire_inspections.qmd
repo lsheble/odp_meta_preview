@@ -9,60 +9,73 @@ format:
 
 
 ```{r} 
-#| Label: load-libraries
+#| label: load-libraries
+#| output: false
+#| warning: false
 library(readr)
 library(inspectdf)
 library(stringr)
 library(forcats)
 library(dplyr)
-# library(lubridate)
 library(ggplot2)
 #library(ggsankey)
+#library(lubridate)
 
 ```
 
 
-```{r} 
-#| Label: load-data
-inspections <- read_csv("data/inspections_202209151519.csv", 
-    col_types = cols(IO_ID = col_character(), 
-        LatestInspDate = col_datetime(format = "%m/%d/%Y %H:%M"), 
-        InspWithinLastYear = col_character(),
-        address_id = col_character()))
+Fire Inspections data was downloaded in csv format from the ODP on Oct 10, 2020 to obtain a snapshot of published data after completion of the entire data processing pipeline.
+
+
+
+```{r}
+#| label: load-fire-inspect-data
+inspections <- read_csv("data/Fire_Inspections_20221010.csv",
+    col_types = cols(X = col_double(), 
+                     Y = col_double(), 
+                     IO_ID = col_character(), 
+                     Address = col_character(), 
+                     OccupantName = col_character(), 
+                     StructureName = col_character(),
+                     InspectionType_Full = col_factor(),
+                     LatestInspDate = col_datetime(format = "%Y/%m/%d %H:%M:%S+00"),
+                     InspWithinLastYear = col_factor(),
+                     address_id = col_character(), 
+                     lon = col_double(), 
+                     lat = col_double(), 
+                     ObjectId = col_character(), 
+                     propusetype = col_factor(), 
+                     propusetypedescription = col_factor(),
+                     zip = col_factor()))
+
 ```
+
 
 
 ## Overview
+
+The imported data set includes `r ncol(inspections)` variables and `r nrow(inspections)` annual inspection records. Nine variables originate in the ingested data, and seven (X, Y, InspWithinLastYear, address_id, lon, lat, ObjectId) from data enrichment through geocoding and processing with AGO.
+
 ```{r}
-#| Label: data-overview
-head(inspections, 10)
+inspections
+```
+
+When imported, variables in the data set were assigned data types based on constituent data. Though fundamentally a logical variable, 'InspWithinLastYear' was treated as a factor to retain display of the labels 'Yes' and 'No'.
+
+```{r}
+#| label: data-types
+inspect_types(inspections) %>% show_plot()
 ```
 
 
 
-Null Value prevalence
+### Null value prevalence
+
 ```{r}
 #| Label: null-overview
 inspect_na(inspections) %>% show_plot()
 ```
 
-## Preparaton of data
-
-### Convert categorical data columns to data type factor
-
-```{r}
-# inspection, prop use types to factors
-inspections$InspectionType_Full <- as_factor(inspections$InspectionType_Full)
-inspections$PropUseType <- as_factor(inspections$PropUseType)
-inspections$PropUseTypeDescription <- as_factor(inspections$PropUseTypeDescription)
-inspections$InspWithinLastYear <- as_factor(inspections$InspWithinLastYear)
-```
-
-Data types
-```{r}
-#| Label: types
-inspect_types(inspections) %>% show_plot()
-```
 
 
 ```{r}
@@ -82,21 +95,21 @@ ggplot(tmp_inspections, aes(x = fct_infreq(InspectionType_Full))) +
 
 
 ```{r}
-inspections %>% count(PropUseType, sort=TRUE)
+inspections %>% count(propusetype, sort=TRUE)
 
 
 ```
 
 
 ```{r}
-ggplot(inspections, aes(x = fct_infreq(PropUseTypeDescription))) + 
+ggplot(inspections, aes(x = fct_infreq(propusetypedescription))) + 
   geom_bar() + coord_flip()
 ```
 
 
 
 ```{r}
-inspections %>% count(PropUseTypeDescription, sort=TRUE)
+inspections %>% count(propusetypedescription, sort=TRUE)
 ```
 
 ```{r}
@@ -125,11 +138,11 @@ inspect_cat(inspections)
 
 
 ```{r}
-inspections %>% distinct(PropUseType, PropUseTypeDescription)  #%>% select(PropUseType, PropUseTypeDescription)
+inspections %>% distinct(propusetype, propusetypedescription)  #%>% select(PropUseType, PropUseTypeDescription)
 ```
 
 
 ```{r}
-inspections %>% arrange(PropUseType) %>% distinct(PropUseTypeDescription) %>% arrange(.by_group = TRUE)
+inspections %>% arrange(propusetype) %>% distinct(propusetypedescription) %>% arrange(.by_group = TRUE)
 ```
 
