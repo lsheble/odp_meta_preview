@@ -18,9 +18,15 @@ The Data.gov website serves as a centralized data catalog the public can use to 
 
 
 ```{mermaid}
-%%| Label: ago-to-datagov 
-flowchart LR
-  A[(AGO <br> geodatabase)] -. exposes DCATA-US v1.1 <br> metadata .-> B[[1 Catalog record <br> containing <br> many Dataset records]] -. harvested by <br> Data.gov .-> C[(Data.gov <br> catalog)]
+%%| Label: ago-records-datagov
+flowchart TB
+  subgraph Catalog_Record
+    direction LR
+    d1[[Dataset <br> record 1]]
+    d2[[Dataset <br> record 2]]
+    d3[[Dataset <br> record n]]
+  end  
+  A[(AGO <br> geodatabase)] -. exposes DCATA-US v1.1 <br> metadata .-> Catalog_Record -. harvested by <br> Data.gov .-> C[(Data.gov <br> catalog)]
 ```
 
 
