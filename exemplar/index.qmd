@@ -9,7 +9,7 @@ resources: fire_inspections.html
 
 ## Reviewing data
 
-Data profiles provide a view into the structure and content of ODP data sets, at selected points in the ingest-transformation-publication workflow. In [this example](https://lsheble.github.io/odp_meta_preview/exemplar/inspect_df_trial_fire_inspections.html), the Fire Inspections data set is was downloaded from AGO and imported for examination. 
+Data profiles provide a view into the structure and content of ODP data sets, at selected points in the ingest-transformation-publication workflow. For [this example](https://lsheble.github.io/odp_meta_preview/exemplar/inspect_df_trial_fire_inspections.html), the Fire Inspections data set was downloaded from AGO and imported for examination. 
 
 ## HTML Preview
 
