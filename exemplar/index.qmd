@@ -1,6 +1,8 @@
 ---
 title: "Metadata exemplar"
-resources: fire_inspections.html
+resources: 
+  fire_inspections.html
+  fire_inspections.json
 ---
 
 
@@ -11,9 +13,11 @@ resources: fire_inspections.html
 
 Data profiles provide a view into the structure and content of ODP data sets, at selected points in the ingest-transformation-publication workflow. For [this example](https://lsheble.github.io/odp_meta_preview/exemplar/inspect_df_trial_fire_inspections.html), the Fire Inspections data set was downloaded from AGO and imported for examination. 
 
-## HTML Preview
+## HTML Preview and Google Rich Results Test
 
-[HTML display mockup](fire_inspections.html)
+An [HTML display mockup](fire_inspections.html) with embedded schema.org "dataset" and "distribution" metadata presents an early glimpse of the potential for a static HTML file to present metadata. The schema.org metadata schema was selected because Google Search, including Google Data Search, relies on structured data embedded in websites that adheres to the schema.org vocabulary. This vocabulary, like the DCAT-US v1.1 vocabulary, is based on the W3C Data Catalog Vocabulary (DCAT) standard.
+
+[Results from the Google "Rich Results Test" for our HTML display mockup](https://search.google.com/test/rich-results/result/r%2Fdatasets?id=yjwf46MkAlC03ztqiMenXA) show that in addition to the "Dataset" and "Distribution" metadata, the structured format of variable-level metadata (column or variable name and description) is also identified. 
 
 
 ## Metadata on AGO
