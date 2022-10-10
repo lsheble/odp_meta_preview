@@ -67,7 +67,7 @@
     "href": "exemplar/index.html#reviewing-data",
     "title": "Metadata exemplar",
     "section": "Reviewing data",
-    "text": "Reviewing data"
+    "text": "Reviewing data\nData profiles provide a view into the structure and content of ODP data sets, at selected points in the ingest-transformation-publication workflow. In this example, the Fire Inspections data set is was downloaded from AGO and imported for examination."
   },
   {
     "objectID": "exemplar/index.html#html-preview",
