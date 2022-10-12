@@ -177,7 +177,7 @@
   {
     "objectID": "metadata_flow/new_from_cod_to_odp.html",
     "href": "metadata_flow/new_from_cod_to_odp.html",
-    "title": "Metadata flow: New data sets for ODP from CoD",
+    "title": "New ODP data sets from CoD",
     "section": "",
     "text": "graph TD\n%% classDef\nclassDef classBlue color: #55a5f6,fill:#f1f1f1,stroke-width:2px,stroke:#55a5f6,font-weight:bold\nclassDef classRed color: #af0659,fill:#e0e5eb,stroke-width:2px,stroke:#af0659\nclassDef classMd color: #c96195,fill:#f1f1f1,stroke-width:2px,stroke:#c96195,font-weight:bold\nclassDef classDB color: #0980b0,fill:#e0e5eb,stroke-width:2px,stroke:#0980b0\nclassDef classFile color:#17559e,fill:#f1f1f1,stroke:#55a5f6\nclassDef classFile2 color:#17559e,fill:#f1f1f1,stroke:#55a5f6\n\n    \n    A[ftp]-->F(Data ingestion, <br> transformation <br> & Data set definition <br> processes)\n    B[Accela]-->F\n    C[Smartsheets]-->F\n    D[(SQL server)]-->F\n    E[Other sources]-->F\n    \n    F-- Assign unique ID <br> to defined Dataset -->G[[Inventory catalog:<br> Dataset record & <br> Data dictionary template]]\n    G-.Individually described <br> metadata subset.->H[Metadata entry <br> interface]\n    \n    G-->J[[PII & sensitivity <br> review]]\n    J-.PII & sensitivity <br> designations.->G\n    H-- Data stewards <br> describe -->G\n    K[Scripts]--Calculate fields-->G\n    G-.Calculated <br> metadata subset.->K\n    \n    \n    \n\n%%Style\n\nclass A,K classBlue\nclass B classRed\nclass C classMd\nclass D classDB\nclass E,F classFile\nclass G,H,J classFile2"
   }

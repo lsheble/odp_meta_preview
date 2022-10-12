@@ -1,5 +1,5 @@
 ---
-title: "Metadata flow: New data sets for ODP from CoD"
+title: "New ODP data sets from CoD"
 ---
 
 
