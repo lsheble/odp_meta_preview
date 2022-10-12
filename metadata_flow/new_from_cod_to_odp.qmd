@@ -1,0 +1,46 @@
+---
+title: "Metadata flow: New data sets for ODP from CoD"
+---
+
+
+
+
+```{mermaid}
+graph TD
+%% classDef
+classDef classBlue color: #55a5f6,fill:#f1f1f1,stroke-width:2px,stroke:#55a5f6,font-weight:bold
+classDef classRed color: #af0659,fill:#e0e5eb,stroke-width:2px,stroke:#af0659
+classDef classMd color: #c96195,fill:#f1f1f1,stroke-width:2px,stroke:#c96195,font-weight:bold
+classDef classDB color: #0980b0,fill:#e0e5eb,stroke-width:2px,stroke:#0980b0
+classDef classFile color:#17559e,fill:#f1f1f1,stroke:#55a5f6
+classDef classFile2 color:#17559e,fill:#f1f1f1,stroke:#55a5f6
+
+    
+    A[ftp]-->F(Data ingestion, <br> transformation <br> & Data set definition <br> processes)
+    B[Accela]-->F
+    C[Smartsheets]-->F
+    D[(SQL server)]-->F
+    E[Other sources]-->F
+    
+    F-- Assign unique ID <br> to defined Dataset -->G[[Inventory catalog:<br> Dataset record & <br> Data dictionary template]]
+    G-.Individually described <br> metadata subset.->H[Metadata entry <br> interface]
+    
+    G-->J[[PII & sensitivity <br> review]]
+    J-.PII & sensitivity <br> designations.->G
+    H-- Data stewards <br> describe -->G
+    K[Scripts]--Calculate fields-->G
+    G-.Calculated <br> metadata subset.->K
+    
+    
+    
+
+%%Style
+
+class A,K classBlue
+class B classRed
+class C classMd
+class D classDB
+class E,F classFile
+class G,H,J classFile2
+```
+

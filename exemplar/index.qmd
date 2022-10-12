@@ -12,7 +12,7 @@ We provide metadata for open data sets to help people discover, use, and interpr
 - **Distribution** records describe files and APIs through which the public can access and obtain copies of data sets. Data distribution records are nested inside data set records.
 - **Data dictionaries** describe individual data fields (i.e., columns or variables) that comprise a data set. Data dictionaries are linked to data set records.
 
-Typically, most of the metadata in catalog and distribution records are created programmatically by DSA staff and the systems we license or implement. etadata in data set records and data dictionaries is created by data stewards and others in the department  ,    
+Typically, most of the metadata in catalog and distribution records are created programmatically by DSA staff and the systems we license or implement. Metadata in data set records and data dictionaries is created by data stewards and other departmental experts.    
 
 
 
@@ -20,8 +20,8 @@ Typically, most of the metadata in catalog and distribution records are created 
 Metadata is created through three primary processes
 1. Data stewards record their knowledge of data sets and the variables the contain. 
 
+[Excel file](https://cidetroitmius.sharepoint.com/:x:/r/sites/M365-DoIT-DSA-BusinessTruth/Shared%20Documents/Business%20Truth/Working_files/metadata/DFD_Fire_Inspections_ODP_data_dictionary.xlsx?d=w28b8aa9dea904c9180d1e9b94b1fdf1c&csf=1&web=1&e=KIdmrn)
 
-https://cidetroitmius.sharepoint.com/:x:/r/sites/M365-DoIT-DSA-BusinessTruth/Shared%20Documents/Business%20Truth/Working_files/metadata/DFD_Fire_Inspections_ODP_data_dictionary.xlsx?d=w28b8aa9dea904c9180d1e9b94b1fdf1c&csf=1&web=1&e=KIdmrn
 
 ## Reviewing data
 

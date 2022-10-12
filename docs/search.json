@@ -165,14 +165,14 @@
     "href": "exemplar/index.html",
     "title": "Metadata exemplar",
     "section": "",
-    "text": "We provide metadata for open data sets to help people discover, use, and interpret the data sets we publish. There are four types of metadata records for open data sets: Catalog records, Data set records, Distribution records, and Data Dictionaries.\nTypically, most of the metadata in catalog and distribution records are created programmatically by DSA staff and the systems we license or implement. etadata in data set records and data dictionaries is created by data stewards and others in the department ,"
+    "text": "We provide metadata for open data sets to help people discover, use, and interpret the data sets we publish. There are four types of metadata records for open data sets: Catalog records, Data set records, Distribution records, and Data Dictionaries.\nTypically, most of the metadata in catalog and distribution records are created programmatically by DSA staff and the systems we license or implement. Metadata in data set records and data dictionaries is created by data stewards and other departmental experts."
   },
   {
     "objectID": "exemplar/index.html#creating-metadata",
     "href": "exemplar/index.html#creating-metadata",
     "title": "Metadata exemplar",
     "section": "Creating metadata",
-    "text": "Creating metadata\nMetadata is created through three primary processes 1. Data stewards record their knowledge of data sets and the variables the contain.\nhttps://cidetroitmius.sharepoint.com/:x:/r/sites/M365-DoIT-DSA-BusinessTruth/Shared%20Documents/Business%20Truth/Working_files/metadata/DFD_Fire_Inspections_ODP_data_dictionary.xlsx?d=w28b8aa9dea904c9180d1e9b94b1fdf1c&csf=1&web=1&e=KIdmrn"
+    "text": "Creating metadata\nMetadata is created through three primary processes 1. Data stewards record their knowledge of data sets and the variables the contain.\nExcel file"
   },
   {
     "objectID": "metadata_flow/new_from_cod_to_odp.html",
