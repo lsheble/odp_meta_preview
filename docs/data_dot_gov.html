@@ -171,6 +171,19 @@ ul.task-list li input[type="checkbox"] {
 <div>
 <p>
 </p><pre class="mermaid" data-tooltip-selector="#mermaid-tooltip-1">flowchart TB
+
+%% classDef
+classDef classBlue color: #55a5f6,fill:#f1f1f1,stroke-width:2px,stroke:#55a5f6,font-weight:bold
+classDef classRed color: #af0659,fill:#e0e5eb,stroke-width:2px,stroke:#af0659
+classDef classMd color: #c96195,fill:#f1f1f1,stroke-width:2px,stroke:#c96195,font-weight:bold
+classDef classDB color: #0980b0,fill:#f1f1f1,stroke-width:2px,stroke:#0980b0
+classDef classFile color:#17559e,fill:#f1f1f1,stroke:#55a5f6
+classDef classFile2 color:#17559e,fill:#f1f1f1,stroke:#55a5f6
+classDef classBlOutline color:#0980b0,fill:#ffffff,stroke:#0980b0
+classDef classCityGreen color:#004445,stroke-width:2px,fill:#F2F2F2,stroke:#004445
+classDef classSpiritGreen color:279989,stroke-width:2px,fill:#F2F2F2,stroke:#279989
+classDef classAccentYellow color:#18252A,stroke-width:2px,fill:#F2F2F2,stroke:#feb70d
+
   subgraph Catalog_Record
     direction LR
     d1[[Dataset &lt;br&gt; record 1]]
@@ -178,6 +191,11 @@ ul.task-list li input[type="checkbox"] {
     d3[[Dataset &lt;br&gt; record n]]
   end  
   A[(AGO &lt;br&gt; geodatabase)] -. exposes DCAT-US v1.1 &lt;br&gt; metadata .-&gt; Catalog_Record -. harvested by &lt;br&gt; Data.gov .-&gt; C[(Data.gov &lt;br&gt; catalog)]
+
+%%Style
+
+class A,d1,d2,d3,Catalog_Record classSpiritGreen
+class C classAccentYellow
 </pre>
 <div id="mermaid-tooltip-1" class="mermaidTooltip">
 
@@ -197,7 +215,7 @@ ul.task-list li input[type="checkbox"] {
 <ol type="1">
 <li>Develop a terms of use / data policy for data sets shared through the Detroit Open Data Portal. To be in compliance with data.gov requirements, this policy should be accessible via a stable URL.</li>
 <li>Identify a single point of contact to which/whom data.gov staff can refer questions about Detroit data sets. This point of contact should be able to triage questions about Detroit data.</li>
-<li>Ensure every data set meets the minimum metadata requirements. To help with this, metadata can be validated using a .json catalog endpoint or by file upload at https://labs.data.gov/dashboard/validate. Results from an initial validation of our catalog were analyzed and issues to be remedied are available on GitHub. Moving forward, validation checks should be repeated periodically or continuously as developing metadata procedures are instituted.</li>
+<li>Ensure every data set meets the minimum metadata requirements. To help with this, metadata can be validated using a .json catalog endpoint or by file upload at https://labs.data.gov/dashboard/validate. Results from an initial validation of our catalog were analyzed and issues to be remedied are available on GitHub. Moving forward, validation checks should be repeated periodically or continuously as developing metadata procedures are instituted. To review current validation results, see real-time results <a href="https://dashboard.data.gov/validate?schema=non-federal-v1.1&amp;output=browser&amp;datajson_url=https%3A%2F%2Fdata.detroitmi.gov%2F%2Fapi%2Ffeed%2Fdcat-us%2F1.1.json&amp;qa=true">in the browser</a> or the <a href="https://dashboard.data.gov/validate?schema=non-federal-v1.1&amp;output=json&amp;datajson_url=https%3A%2F%2Fdata.detroitmi.gov%2F%2Fapi%2Ffeed%2Fdcat-us%2F1.1.json&amp;qa=true">JSON formatted file</a>.</li>
 <li>Steps to help ensure metadata associated with newly published data meets the Data.gov standard should be integrated into data publication workflows and instructions.</li>
 <li>In some cases, element-level metadata of the type that would be included in a data dictionary has been directly entered in the data set description fields on AGO. As metadata processes and standards are formalized, it may be helpful to review metadata displays and available alternatives. In collaboration with data stewards and other stakeholders, benefits and limitations of retrospectively reformatting metadata could be reviewed.</li>
 <li>Evaluate the interpretability of local metadata in broader contexts such as Data.gov context.</li>

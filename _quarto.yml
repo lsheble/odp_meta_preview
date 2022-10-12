@@ -19,6 +19,9 @@ website:
         contents:
           - exemplar/inspect_df_trial_fire_inspections.qmd
           - exemplar/fire_inspections.html
+      - section: metadata_flow/index.qmd
+        contents:
+          - metadata_flow/new_from_cod_to_odp.qmd
       - href: data_dot_gov.qmd
         text: Data discovery
       - about.qmd

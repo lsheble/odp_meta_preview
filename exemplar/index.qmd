@@ -5,9 +5,23 @@ resources:
   fire_inspections.json
 ---
 
+We provide metadata for open data sets to help people discover, use, and interpret the data sets we publish. There are four types of metadata records for open data sets: Catalog records, Data set records, Distribution records, and Data Dictionaries.
+
+- **Catalog** records group together data set records and contain a high level technical description of the collection of data sets as a whole. Through ArcGIS Online (AGO), for example, there is a catalog record with an entry for each and every data set available through the Open Data Portal.  
+- **Data set** records are used to describe each data sets as a whole. They contain information such as title, keywords, a narrative description, and the spatial and temporal scope of data included in the data set. Data set records are nested in catalogs.
+- **Distribution** records describe files and APIs through which the public can access and obtain copies of data sets. Data distribution records are nested inside data set records.
+- **Data dictionaries** describe individual data fields (i.e., columns or variables) that comprise a data set. Data dictionaries are linked to data set records.
+
+Typically, most of the metadata in catalog and distribution records are created programmatically by DSA staff and the systems we license or implement. etadata in data set records and data dictionaries is created by data stewards and others in the department  ,    
+
+
 
 ## Creating metadata
+Metadata is created through three primary processes
+1. Data stewards record their knowledge of data sets and the variables the contain. 
 
+
+https://cidetroitmius.sharepoint.com/:x:/r/sites/M365-DoIT-DSA-BusinessTruth/Shared%20Documents/Business%20Truth/Working_files/metadata/DFD_Fire_Inspections_ODP_data_dictionary.xlsx?d=w28b8aa9dea904c9180d1e9b94b1fdf1c&csf=1&web=1&e=KIdmrn
 
 ## Reviewing data
 
@@ -15,7 +29,7 @@ Data profiles provide a view into the structure and content of ODP data sets, at
 
 ## HTML Preview and Google Rich Results Test
 
-An [HTML display mockup](fire_inspections.html) with embedded schema.org "dataset" and "distribution" metadata presents an early glimpse of the potential for a static HTML file to present metadata. The schema.org metadata schema was selected because Google Search, including Google Data Search, relies on structured data embedded in websites that adheres to the schema.org vocabulary. This vocabulary, like the DCAT-US v1.1 vocabulary, is based on the W3C Data Catalog Vocabulary (DCAT) standard.
+An [HTML display mockup](fire_inspections.html) with embedded schema.org "dataset" and "distribution" metadata presents an early glimpse of the potential for a static HTML file to present metadata. The schema.org metadata schema was selected because Google Search, including Google Data Search, relies on structured data embedded in websites that adhere to the schema.org vocabulary. This vocabulary, like the DCAT-US v1.1 vocabulary, is based on the W3C Data Catalog Vocabulary (DCAT) standard.
 
 [Results from the Google "Rich Results Test" for our HTML display mockup](https://search.google.com/test/rich-results/result/r%2Fdatasets?id=yjwf46MkAlC03ztqiMenXA) show that in addition to the "Dataset" and "Distribution" metadata, the structured format of variable-level metadata (column or variable name and description) is also identified. 
 
