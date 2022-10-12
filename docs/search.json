@@ -172,7 +172,7 @@
     "href": "exemplar/index.html#creating-metadata",
     "title": "Metadata exemplar",
     "section": "Creating metadata",
-    "text": "Creating metadata\nMetadata is created through three primary processes 1. Data stewards record their knowledge of data sets and the variables the contain.\nExcel file"
+    "text": "Creating metadata\nMetadata is created through three primary processes\n\nData stewards or other departmental experts record data set and data dictionary metadata using an Excel(https://cidetroitmius.sharepoint.com/:x:/r/sites/M365-DoIT-DSA-BusinessTruth/Shared%20Documents/Business%20Truth/Working_files/metadata/DFD_Fire_Inspections_ODP_data_dictionary.xlsx?d=w28b8aa9dea904c9180d1e9b94b1fdf1c&csf=1&web=1&e=KIdmrn) or web-based template (under development).\nInternal scripts are used to query and summarize data values that are recorded in metadata records.\nMetadata is assigned through AGO site-wide settings and ingestion processes."
   },
   {
     "objectID": "metadata_flow/new_from_cod_to_odp.html",

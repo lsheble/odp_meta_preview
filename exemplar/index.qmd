@@ -18,9 +18,10 @@ Typically, most of the metadata in catalog and distribution records are created 
 
 ## Creating metadata
 Metadata is created through three primary processes
-1. Data stewards record their knowledge of data sets and the variables the contain. 
 
-[Excel file](https://cidetroitmius.sharepoint.com/:x:/r/sites/M365-DoIT-DSA-BusinessTruth/Shared%20Documents/Business%20Truth/Working_files/metadata/DFD_Fire_Inspections_ODP_data_dictionary.xlsx?d=w28b8aa9dea904c9180d1e9b94b1fdf1c&csf=1&web=1&e=KIdmrn)
+1. Data stewards or other departmental experts record data set and data dictionary metadata using an Excel(https://cidetroitmius.sharepoint.com/:x:/r/sites/M365-DoIT-DSA-BusinessTruth/Shared%20Documents/Business%20Truth/Working_files/metadata/DFD_Fire_Inspections_ODP_data_dictionary.xlsx?d=w28b8aa9dea904c9180d1e9b94b1fdf1c&csf=1&web=1&e=KIdmrn) or web-based template (under development).
+2. Internal scripts are used to query and summarize data values that are recorded in metadata records.
+3. Metadata is assigned through AGO site-wide settings and ingestion processes.
 
 
 ## Reviewing data
