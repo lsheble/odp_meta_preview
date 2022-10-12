@@ -22,8 +22,9 @@ website:
       - section: metadata_flow/index.qmd
         contents:
           - metadata_flow/new_from_cod_to_odp.qmd
-      - href: data_dot_gov.qmd
-        text: Data discovery
+      - section: discovery/index.qmd
+        contents:
+          - discovery/data_dot_gov.qmd
       - about.qmd
 
 

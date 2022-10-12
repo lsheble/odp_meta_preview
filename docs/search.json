@@ -180,5 +180,33 @@
     "title": "New ODP data sets from CoD",
     "section": "",
     "text": "graph TD\n%% classDef\nclassDef classBlue color: #55a5f6,fill:#f1f1f1,stroke-width:2px,stroke:#55a5f6,font-weight:bold\nclassDef classRed color: #af0659,fill:#e0e5eb,stroke-width:2px,stroke:#af0659\nclassDef classMd color: #c96195,fill:#f1f1f1,stroke-width:2px,stroke:#c96195,font-weight:bold\nclassDef classDB color: #0980b0,fill:#e0e5eb,stroke-width:2px,stroke:#0980b0\nclassDef classFile color:#17559e,fill:#f1f1f1,stroke:#55a5f6\nclassDef classFile2 color:#17559e,fill:#f1f1f1,stroke:#55a5f6\n\n    \n    A[ftp]-->F(Data ingestion, <br> transformation <br> & Data set definition <br> processes)\n    B[Accela]-->F\n    C[Smartsheets]-->F\n    D[(SQL server)]-->F\n    E[Other sources]-->F\n    \n    F-- Assign unique ID <br> to defined Dataset -->G[[Inventory catalog:<br> Dataset record & <br> Data dictionary template]]\n    G-.Individually described <br> metadata subset.->H[Metadata entry <br> interface]\n    \n    G-->J[[PII & sensitivity <br> review]]\n    J-.PII & sensitivity <br> designations.->G\n    H-- Data stewards <br> describe -->G\n    K[Scripts]--Calculate fields-->G\n    G-.Calculated <br> metadata subset.->K\n    \n    \n    \n\n%%Style\n\nclass A,K classBlue\nclass B classRed\nclass C classMd\nclass D classDB\nclass E,F classFile\nclass G,H,J classFile2"
+  },
+  {
+    "objectID": "discovery/data_dot_gov.html",
+    "href": "discovery/data_dot_gov.html",
+    "title": "Preparing ODP data for Data.gov",
+    "section": "",
+    "text": "The Data.gov website serves as a centralized data catalog the public can use to discover public data. The primary focus is federal data though state and local governments and NGOs are invited to have catalog, data set, and data distribution metadata included in the catalog. To do so, organizations can sign up to have metadata harvested through a DCAT-US 1.1 compliant API. DCAT-US schema version 1.1 metadata requirements are published on resources.data.gov. The json-ld schema for DCAT 1.1 is available at the URL https://project-open-data.cio.gov/v1.1/schema/catalog.jsonld.\nThrough ArcGIS Online (AGO), the ODP has an JSON endpoint that meets Data.gov format requirements. AGO therefore provides an approach to having ODP data included in the Data.gov catalog fairly easily (see figure). Additions, updates, and deletions to the Data.gov catalog occur through the harvest source rather than within Data.gov directly. Data.gov synchronizes changes daily through a harvest job."
+  },
+  {
+    "objectID": "discovery/data_dot_gov.html#adding-local-government-data-to-data.gov",
+    "href": "discovery/data_dot_gov.html#adding-local-government-data-to-data.gov",
+    "title": "Preparing ODP data for Data.gov",
+    "section": "Adding local government data to Data.gov",
+    "text": "Adding local government data to Data.gov\nThe article “How to get your Open Data on Data.gov” provides instructions for having Open Data harvested by Data.gov and includes details specific to non-federal data publishers.\nAt a local level, a number of recommended policy, quality assurance, and related steps have been identified through review of our metadata and other local data resources. An overview of recommendations developed to date follow. Progress on the recommendations is being tracked on Github.\n\nSteps to ensure metadata meets local and Data.gov publishing criteria [DRAFT]\n\nDevelop a terms of use / data policy for data sets shared through the Detroit Open Data Portal. To be in compliance with data.gov requirements, this policy should be accessible via a stable URL.\nIdentify a single point of contact to which/whom data.gov staff can refer questions about Detroit data sets. This point of contact should be able to triage questions about Detroit data.\nEnsure every data set meets the minimum metadata requirements. To help with this, metadata can be validated using a .json catalog endpoint or by file upload at https://labs.data.gov/dashboard/validate. Results from an initial validation of our catalog were analyzed and issues to be remedied are available on GitHub. Moving forward, validation checks should be repeated periodically or continuously as developing metadata procedures are instituted. To review current validation results, see real-time results in the browser or the JSON formatted file.\nSteps to help ensure metadata associated with newly published data meets the Data.gov standard should be integrated into data publication workflows and instructions.\nIn some cases, element-level metadata of the type that would be included in a data dictionary has been directly entered in the data set description fields on AGO. As metadata processes and standards are formalized, it may be helpful to review metadata displays and available alternatives. In collaboration with data stewards and other stakeholders, benefits and limitations of retrospectively reformatting metadata could be reviewed.\nEvaluate the interpretability of local metadata in broader contexts such as Data.gov context.\nReview the catalog of data sets available via our JSON endpoint and determine if all are appropriate to share via Data.gov. If any data set is not suitable to share through the catalog, methods to exclude such data sets, and how this would impact data published through the ODP would need to be identified and taken into account.\n\n\n\n\n\n\n\nTip\n\n\n\nGithub issue #1168 and related sub-issues are being used to track progress on recommendations."
+  },
+  {
+    "objectID": "discovery/data_dot_gov.html#data.gov-sign-up-and-registration-requirements",
+    "href": "discovery/data_dot_gov.html#data.gov-sign-up-and-registration-requirements",
+    "title": "Preparing ODP data for Data.gov",
+    "section": "Data.gov sign-up and registration requirements",
+    "text": "Data.gov sign-up and registration requirements\nLocal governments and others are invited to sign up to have local data federated to Data.gov. When doing so, the following information is requested:\n\nName of the government entity\nName and email address of individual requesting to have data catalog included\nData Catalog Data.json URL\nData Catalog Terms of Use URL\nAdditionally, details about data included in the catalog from other sources such as the Federal Government, State Government, or a non-profit is requested."
+  },
+  {
+    "objectID": "discovery/index.html",
+    "href": "discovery/index.html",
+    "title": "Data discovery",
+    "section": "",
+    "text": "Preparing ODP data for Data.gov"
   }
 ]
