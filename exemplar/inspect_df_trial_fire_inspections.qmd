@@ -71,11 +71,14 @@ inspect_types(inspections) %>% show_plot()
 
 ### Null value prevalence
 
+Across the fire inspections data set, 6 columns include 'NA' or null values. One column, 'StructureName' is used by DFD on an ad hoc basis for directional purposes in inspection workflows and is only indicated in inspection records when helpful. Null values in the remaining five fields originate from geocoding. These null values represent addresses that were not identified when the data set was geocoded.
+
 ```{r}
 #| Label: null-overview
 inspect_na(inspections) %>% show_plot()
 ```
 
+### Annual inspection type
 
 
 ```{r}
@@ -92,7 +95,7 @@ ggplot(tmp_inspections, aes(x = fct_infreq(InspectionType_Full))) +
   geom_bar() + labs(x="Annual Inspection Type", y="Count") + coord_flip()
 ```
 
-
+### Property use type
 
 ```{r}
 inspections %>% count(propusetype, sort=TRUE)
@@ -102,15 +105,28 @@ inspections %>% count(propusetype, sort=TRUE)
 
 
 ```{r}
+#| echo: false
+#| evaluate: false
+#| output: false
+# rework graph. For example, do not include items that occur only once - or under similar low threshold - in chart. Instead, list those items and the number of times they occur separately
 ggplot(inspections, aes(x = fct_infreq(propusetypedescription))) + 
   geom_bar() + coord_flip()
 ```
+```{r}
+#| echo: false
+#| evaluate: false
+#| output: false
+# to do: include both propusetype code and description in one chart
 
+inspections %>% distinct(propusetype, propusetypedescription)  #%>% select(PropUseType, PropUseTypeDescription)
+```
 
 
 ```{r}
 inspections %>% count(propusetypedescription, sort=TRUE)
 ```
+
+### Inspected within last year
 
 ```{r}
 inspections %>% count(InspWithinLastYear, sort=TRUE)
@@ -126,20 +142,20 @@ ggplot(inspections, aes(x = fct_infreq(InspWithinLastYear))) +
 ```
 
 
+### Most common values in categorical variables (columns)
 
 ```{r}
 inspect_imb(inspections) %>% show_plot()
 ```
 
+### Number of unique values and prevalence of most common values by column
 
 ```{r}
 inspect_cat(inspections)
 ```
 
 
-```{r}
-inspections %>% distinct(propusetype, propusetypedescription)  #%>% select(PropUseType, PropUseTypeDescription)
-```
+
 
 
 ```{r}
