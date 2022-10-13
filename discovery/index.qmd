@@ -2,4 +2,4 @@
 title: "Data discovery"
 ---
 
-- [Preparing ODP data for Data.gov](discovery/data_dot_gov.html)
+- [Preparing ODP data for Data.gov](data_dot_gov.html)
