@@ -12,7 +12,7 @@ We provide metadata for open data sets to help people discover, use, and interpr
 - **Distribution** records describe files and APIs through which the public can access and obtain copies of data sets. Data distribution records are nested inside data set records.
 - **Data dictionaries** describe individual data fields (i.e., columns or variables) that comprise a data set. Data dictionaries are linked to data set records.
 
-Typically, most of the metadata in catalog and distribution records are created programmatically by DSA staff and the systems we license or implement. Metadata in data set records and data dictionaries incorporate information from a broader set of sources. Notably, these records are individually curated and include departmental knowledge shared by data stewards and other departmental experts.    
+Typically, most of the metadata in catalog and distribution records are created programmatically by DSA staff and the systems we license or implement. Metadata in data set records and data dictionaries incorporate information from a broader set of sources. These records are individually curated and include departmental knowledge shared by data stewards and other departmental experts.    
 
 
 
