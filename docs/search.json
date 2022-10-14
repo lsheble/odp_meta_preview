@@ -165,7 +165,7 @@
     "href": "exemplar/index.html",
     "title": "Metadata exemplar",
     "section": "",
-    "text": "We provide metadata for open data sets to help people discover, use, and interpret the data sets we publish. There are four types of metadata records for open data sets: Catalog records, Data set records, Distribution records, and Data Dictionaries.\nTypically, most of the metadata in catalog and distribution records are created programmatically by DSA staff and the systems we license or implement. Metadata in data set records and data dictionaries is created by data stewards and other departmental experts."
+    "text": "We provide metadata for open data sets to help people discover, use, and interpret the data sets we publish. There are four types of metadata records for open data sets: Catalog records, Data set records, Distribution records, and Data Dictionaries.\nTypically, most of the metadata in catalog and distribution records are created programmatically by DSA staff and the systems we license or implement. Metadata in data set records and data dictionaries incorporate information from a broader set of sources. Notably, these records are individually curated and include departmental knowledge shared by data stewards and other departmental experts."
   },
   {
     "objectID": "exemplar/index.html#creating-metadata",
@@ -208,5 +208,12 @@
     "title": "Data discovery",
     "section": "",
     "text": "Preparing ODP data for Data.gov"
+  },
+  {
+    "objectID": "exemplar/ago_metadata.html",
+    "href": "exemplar/ago_metadata.html",
+    "title": "AGO Metadata",
+    "section": "",
+    "text": "Code\n# #| label: read-xml\n# \n# import pandas as pd\n# \n# metadf = pd.read_xml(\"https://www.arcgis.com/sharing/rest/content/items/0bac58a27da04e4a95910cb6488b7fe9/info/metadata/metadata.xml\")"
   }
 ]
