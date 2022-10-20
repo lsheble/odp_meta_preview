@@ -18,9 +18,11 @@ library(stringr)
 library(forcats)
 library(dplyr)
 library(ggplot2)
-#library(ggsankey)
-#library(lubridate)
-
+library(lubridate)
+library(dplyr)
+library(gridExtra)   
+# library(ggsankey)
+# library(scales)
 ```
 
 
@@ -78,6 +80,103 @@ Across the fire inspections data set, 6 columns include 'NA' or null values. One
 inspect_na(inspections) %>% show_plot()
 ```
 
+
+
+```{r}
+### Inspected within last year : removed this chart
+# inspections %>% count(InspWithinLastYear, sort=TRUE)
+# ggplot(inspections, aes(x = fct_infreq(InspWithinLastYear))) + 
+#  geom_bar()
+```
+
+
+### Inspections by time periods
+
+When generating charts to indicate when inspections occurred by time of day and day of week, the datetime field was interpreted to be the local system time (Eastern Time). Inspection dates and times are recorded in the format `%Y/%m/%d %H:%M:%S+00`, for example `2022/09/26 08:47:08+00`, where the `+00` at the end of an entry should indicate the time offset from UTC. 
+
+
+
+```{r}
+#| label: prepare-time-related-fields
+
+# example datetime field: 	
+# 2022/09/26 08:47:08+00
+
+
+# transform to date time field then make day of week field + time of day field
+# timezone information, stored as '+00' in AGO is snipped off by taking substring of datetime field, set timezone to time on my local system
+inspections <- inspections %>%
+  mutate(time_of_day = hms(str_sub(LatestInspDate,12,19)), 
+         LatestInspDate = as_datetime(str_sub(LatestInspDate,1,19), tz = Sys.timezone()),
+         day_of_week = wday(LatestInspDate,label=TRUE,abbr=TRUE))
+
+# create decimal time using hour plus fractional hours calculated from minute, second values
+inspections <- inspections %>%
+  mutate(time_dec = hour(time_of_day) + 
+  minute(time_of_day)/60 + 
+  second(time_of_day)/360)
+
+```
+
+
+
+
+```{r}
+#| label: inspection-days
+#| warning: false
+# bar plot: count of inspections per day of the week
+day_recent <- inspections %>%
+  group_by(day_of_week, InspWithinLastYear) %>%
+  summarize(N = n())
+
+#glimpse(day_recent)
+
+# day_recent
+
+ggplot(data = day_recent, aes(x=day_of_week, y=N, fill = InspWithinLastYear)) + geom_col(position = 'dodge2') + 
+  labs(x="Day of Week", y = "Number of Inspections", fill = "Inspected in last year")
+```
+
+#### Inspections by day and time
+
+It could be helpful to examine how time zone and daylight savings time are recorded in our data. The charts depicting inspections by time of day and day of week are a first step towards supporting such a review. 
+
+```{r}
+#| label: Inspections-days-times 
+
+# density plots: time of day by day of week: all inspections
+p1 <- ggplot(data = inspections, 
+            mapping = aes(x = time_dec)) + 
+  scale_x_continuous(breaks = c(0,4,8,12,16,20,24)) +
+  scale_y_continuous(breaks = c(0.0, 0.10)) +
+  geom_density(fill='#9FD5B3', color = '#279989') +  # spirit green: #279989 city green: #004445
+  ggtitle("All inspections") +
+  labs(x="Time of Day (24 hour clock)", y = "Proportion") + 
+  theme(axis.ticks.y = element_blank()) +
+  facet_wrap(~ day_of_week, ncol=1)
+
+
+
+
+# density plots: time of day by day of week: past year inspections
+inspections_recent <- inspections  %>%
+  filter(InspWithinLastYear == "Yes") 
+
+p2 <- ggplot(data = inspections_recent, 
+            mapping = aes(x = time_dec)) + 
+  scale_x_continuous(breaks = c(0,4,8,12,16,20,24)) +
+  scale_y_continuous(breaks = c(0.0, 0.10)) +
+  geom_density(fill='#9FD5B3', color = '#279989') +  # spirit green: #279989 city green: #004445
+  ggtitle("Inspections in last year") +
+  labs(x="Time of Day (24 hour clock)", y = "Proportion") + 
+  theme(axis.ticks.y = element_blank()) +
+  facet_wrap(~ day_of_week, ncol=1)
+
+grid.arrange(p1, p2, ncol = 2)          # Apply grid.arrange function
+
+```
+
+
 ### Annual inspection type
 
 
@@ -126,13 +225,6 @@ inspections %>% distinct(propusetype, propusetypedescription)  #%>% select(PropU
 inspections %>% count(propusetypedescription, sort=TRUE)
 ```
 
-### Inspected within last year
-
-```{r}
-inspections %>% count(InspWithinLastYear, sort=TRUE)
-ggplot(inspections, aes(x = fct_infreq(InspWithinLastYear))) + 
-  geom_bar()
-```
 
 
 ```{r}
