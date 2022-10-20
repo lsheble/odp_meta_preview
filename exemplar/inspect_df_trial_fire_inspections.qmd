@@ -129,12 +129,12 @@ day_recent <- inspections %>%
   group_by(day_of_week, InspWithinLastYear) %>%
   summarize(N = n())
 
-#glimpse(day_recent)
 
-# day_recent
 
 ggplot(data = day_recent, aes(x=day_of_week, y=N, fill = InspWithinLastYear)) + geom_col(position = 'dodge2') + 
-  labs(x="Day of Week", y = "Number of Inspections", fill = "Inspected in last year")
+  ggtitle("Inspections by day of week") +
+  labs(x="Day of Week", y = "Number of Inspections", fill = "Inspected in last year") +
+  theme_bw()
 ```
 
 #### Inspections by day and time
@@ -150,8 +150,10 @@ p1 <- ggplot(data = inspections,
   scale_x_continuous(breaks = c(0,4,8,12,16,20,24)) +
   scale_y_continuous(breaks = c(0.0, 0.10)) +
   geom_density(fill='#9FD5B3', color = '#279989') +  # spirit green: #279989 city green: #004445
+  # geom_vline(xintercept = c(8,17), color='#feb70d') +
   ggtitle("All inspections") +
   labs(x="Time of Day (24 hour clock)", y = "Proportion") + 
+  theme_minimal() +
   theme(axis.ticks.y = element_blank()) +
   facet_wrap(~ day_of_week, ncol=1)
 
@@ -167,8 +169,12 @@ p2 <- ggplot(data = inspections_recent,
   scale_x_continuous(breaks = c(0,4,8,12,16,20,24)) +
   scale_y_continuous(breaks = c(0.0, 0.10)) +
   geom_density(fill='#9FD5B3', color = '#279989') +  # spirit green: #279989 city green: #004445
+#  geom_vline(xintercept = c(8,18), color='#004445') +  # , color='#004445'
+#  annotate("text", x = 9.35, y = 0.075, label = "8 AM", size=2.75, color='#004445') +
+#  annotate("text", x = 19.35, y = 0.075, label = "6 PM", size=2.75, color='#004445') +
   ggtitle("Inspections in last year") +
   labs(x="Time of Day (24 hour clock)", y = "Proportion") + 
+  theme_minimal() +
   theme(axis.ticks.y = element_blank()) +
   facet_wrap(~ day_of_week, ncol=1)
 
@@ -191,7 +197,10 @@ tmp_inspections %>% count(InspectionType_Full, sort=TRUE)
 
 ```{r}
 ggplot(tmp_inspections, aes(x = fct_infreq(InspectionType_Full))) + 
-  geom_bar() + labs(x="Annual Inspection Type", y="Count") + coord_flip()
+  geom_bar(fill='#004445') + labs(x="Annual Inspection Type", y="Count") + coord_flip() +
+  ggtitle("Number of Annual Inspections by Type") +
+  theme_bw()
+
 ```
 
 ### Property use type
