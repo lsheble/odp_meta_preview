@@ -139,10 +139,29 @@ ggplot(data = day_recent, aes(x=day_of_week, y=N, fill = InspWithinLastYear)) + 
 
 #### Inspections by day and time
 
-It could be helpful to examine how time zone and daylight savings time are recorded in our data. The charts depicting inspections by time of day and day of week are a first step towards supporting such a review. 
+It could be helpful to examine how time zone and daylight savings time are recorded in our data. The charts depicting inspections by time of day across all days and by day of week are a first step towards supporting such a review. 
 
 ```{r}
-#| label: Inspections-days-times 
+#| label: times-all-days
+# density plot: inspections by time of day
+ggplot(data = inspections, 
+            mapping = aes(x = time_dec)) + 
+  scale_x_continuous(breaks = c(0,4,8,12,16,20,24)) +
+  scale_y_continuous(breaks = c(0.0, 0.10)) +
+  geom_density(fill='#9FD5B3', color = '#279989') +  # spirit green: #279989 city green: #004445
+  geom_vline(xintercept = c(8,18), color='#004445') +  # , color='#004445'
+  annotate("text", x = 9, y = 0.075, label = "8 AM", size=2.75, color='#004445') +
+  annotate("text", x = 19, y = 0.075, label = "6 PM", size=2.75, color='#004445') +
+  ggtitle("All inspections") +
+  labs(x="Time of Day (24 hour clock)", y = "Proportion") + 
+  theme_minimal() +
+  theme(axis.ticks.y = element_blank())
+```
+
+
+
+```{r}
+#| label: Inspections-times-by-days 
 
 # density plots: time of day by day of week: all inspections
 p1 <- ggplot(data = inspections, 
