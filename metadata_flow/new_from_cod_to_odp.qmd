@@ -16,7 +16,7 @@ classDef classFile color:#17559e,fill:#f1f1f1,stroke:#55a5f6
 classDef classFile2 color:#17559e,fill:#f1f1f1,stroke:#55a5f6
 
     
-    A[ftp]-->F(Data ingestion, <br> transformation <br> & Data set definition <br> processes)
+    A[ftp]-->F(Data set definition, <br> ingestion, & <br> transformation <br> processes)
     B[Accela]-->F
     C[Smartsheets]-->F
     D[(SQL server)]-->F
