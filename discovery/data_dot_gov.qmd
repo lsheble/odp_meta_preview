@@ -6,7 +6,7 @@ format:
 ---
 
 
-The Data.gov website serves as a centralized data catalog the public can use to discover public data. The primary focus is federal data though state and local governments and NGOs are invited to have catalog, data set, and data distribution metadata included in the catalog. To do so, organizations can sign up to have metadata harvested through a DCAT-US 1.1 compliant API. [DCAT-US schema version 1.1](https://resources.data.gov/resources/dcat-us/) metadata requirements are published on resources.data.gov. The json-ld schema for DCAT 1.1 is available at the URL https://project-open-data.cio.gov/v1.1/schema/catalog.jsonld.  
+The Data.gov website serves as a centralized data catalog the public can use to discover public data. The primary focus is federal data though state and local governments and NGOs are invited to have catalog, data set, and data distribution metadata included in the catalog. To do so, organizations can sign up to have metadata harvested through a DCAT-US 1.1 compliant API. [DCAT-US schema version 1.1](https://resources.data.gov/resources/dcat-us/) metadata requirements are published on resources.data.gov. The json-ld schema for DCAT 1.1 is available from the [U.S. CIO Council](https://project-open-data.cio.gov/v1.1/schema/catalog.jsonld).
 
 
 Through ArcGIS Online (AGO), [the ODP has an JSON endpoint](https://data.detroitmi.gov//api/feed/dcat-us/1.1.json) that meets Data.gov format requirements. AGO therefore provides an approach to having ODP data included in the Data.gov catalog fairly easily (see figure). Additions, updates, and deletions to the Data.gov catalog occur through the harvest source rather than within Data.gov directly. Data.gov synchronizes changes daily through a harvest job.
